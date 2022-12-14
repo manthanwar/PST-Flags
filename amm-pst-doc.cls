@@ -44,8 +44,8 @@
 \RequirePackage{pst-all}
 %\RequirePackage{pstricks-add}
 %\RequirePackage{pst-all,pst-grad,pst-blur,pst-light3d,pst-3d,pst-math}
-\RequirePackage{pst-slpe}
-\RequirePackage{pst-hsb}
+%\RequirePackage{pst-slpe}
+%\RequirePackage{pst-hsb}
 %\RequirePackage{pst-coil}
 %\RequirePackage{tikz}
 %\RequirePackage{pgfgantt}

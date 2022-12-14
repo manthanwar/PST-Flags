@@ -62,6 +62,7 @@ versions of \LaTeX{} and \texttt{pstricks}. The style file \texttt{pst-flags.sty
 in your \TeX-input path, where \texttt{dvips} can
 find it.
 
+\paragraph{Dependencies:} This packages requires expl3, fp, xfp, pstricks and pst-all.
 
 \paragraph{Usage:}
 Load the packages \texttt{pstricks} and \texttt{pst-flags}
@@ -75,9 +76,6 @@ in that order via the \texttt{usepackage} macro. Now you are ready to use the \t
 Flag of US: \rput(0,0){\flagUS[2]}
 \end{document}
 \end{verbatim}
-
-
-
 
 \section{Sovereign State Flags}
 Flags are in many different height to width aspect ratio (AR). The flags of India \verb|\flagIN| and UK \verb|\flagUK| uses the aspect ratios of 2:3 and 1:2 respectively. These are the two of the most common aspect ratios used by over 80 and 50 countries respectively. The accuracy of colors, shapes, internal objects and aspect ratio make the flag of a sovereign state unique. Width is the only option needed to draw the flag with macro appended with two letter country code which internally determines the corresponding height. In order to draw a flag with the specific height use the aspect ratio from the table below to calculate the appropriate width and supply it rectangular bracket in centimeters. \texttt{PSTricks} macro \verb|\rput| macro and environment \verb|pspictur| can be also used and encouraged for the accurate placement.
@@ -297,7 +295,6 @@ Zimbabwe	&	ZW	&	1:2
 \end{table}
 
 \clearpage
-%\input{pst-flags-guide.tex}
 \input{pst-flags-examples.tex}
 
 \end{document}
