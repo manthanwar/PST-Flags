@@ -24,32 +24,28 @@
 \usepackage{pstricks}
 \usepackage{pst-flags}
 
-%\usepackage{esvect}
-%\let\vec\vv
-%\usepackage{bbold}
-%\addbibresource{pst-bezier-doc.bib}
-
 \title{\vspace*{-10mm}
-\texttt{pst-flags}: A PSTricks Package for Drawing Flags}
+\texttt{pst-flags}: A PSTricks Package for Drawing Flags\\[2mm]
+\Large{Version 2022/11/27}}
 \author{Amit M. Manthanwar}
-\date{\today}
+\date{}
 
 \begin{document}
 \maketitle
 %\tableofcontents
 
 \section{Introduction}
-This document is a reference manual for the \texttt{pst-flags} package. The package and the user manual is available at \href{https://ctan.org/tex-archive/macros/latex/contrib/pst-flags}{ctan archive}.
+This document is a reference manual for the \texttt{pst-flags} package. The package and its user manual are available in the CTAN archive \href{https://ctan.org/tex-archive/graphics/pstricks/contrib/pst-flags} {https://ctan.org/tex-archive/graphics/pstricks/contrib/pst-flags}.
 
 \subsection{About \texttt{pst-flags}}
-This package provides macros for rendering flags and associated artefacts drawn using \LaTeX PSTricks package. This package further contributes towards a complete implementation of the vector drawing capabilities provided by PSTricks. Formatting of the resulting drawings is entirely controlled by \TeX macros. A good working knowledge of LaTeX should be sufficient to design flags and draw the new ones. Features such as color or shape customisation and dynamic modifications are possible by cleverly adjusting the properties and parameters arguments of the options supplied to \TeX macros.
+This package provides a number of macros for rendering flags of countries and their associated artefacts drawn using \LaTeX\ PSTricks package. This package further contributes towards a complete implementation of the vector drawing capabilities provided by PSTricks. Formatting of the resulting drawings is entirely controlled by the \TeX\ macros. A good working knowledge of LaTeX should be sufficient to design flags of sovereign countries and adapt them to create new designs. Features such as color or shape customisation and dynamic modifications are possible by cleverly adjusting the options supplied to the \TeX\ macros.
 
 \subsection{License}
 Copyright © 2022 Amit M. Manthanwar. Permission is granted to
-copy, distribute and/or modify this software under the terms of the LaTeX Project Public License, \href{https://www.latex-project.org/lppl.txt}{version 1.3.2}.
+copy, distribute and/or modify this software under the terms of the LaTeX Project Public License, \href{https://www.latex-project.org/lppl.txt}{LPPL Version 1.3c}.
 
 \subsection{Feedback}
-Please use the \texttt{pst-flags} \href{project page on GitHub}{https://github.com/manthanwar/pst-flags} to report bugs and submit feature requests. Before making a feature request, please ensure that you have thoroughly studied this manual. If you do not want to report a bug or request a feature but are simply in need of assistance, you might want to consider posting your question on the comp.text.tex newsgroup or TeX-LaTeX Stack Exchange web page  \href{https://tex.stackexchange.com/questions/tagged/pst-flags}{pst-flags}.
+Please use the \texttt{pst-flags} project page on GitHub \href{https://github.com/manthanwar/pst-flags}{https://github.com/manthanwar/pst-flags} to report bugs and submit feature requests. Before making a feature request, please ensure that you have thoroughly studied this manual. If you do not want to report a bug or request a feature but are simply in need of assistance, you might want to consider posting your question on the comp.text.tex newsgroup or  \href{https://tex.stackexchange.com/questions/tagged/pst-flags} {TeX-LaTeX Stack Exchange}.
 
 \subsection{Acknowledgements}
 This package would not have been possible without the base \texttt{PSTricks} and its associated packages. The authors would like to acknowledge the valuable contributions made by the main \texttt{PSTricks} authors and by the broader \texttt{PST} community. The colors and construction sheets used to program macros are taken from the websites:   \href{https://www.flagcolorcodes.com/}{flagcolorcodes}, \href{https://en.wikipedia.org/wiki/Wiki}{wikipedia}, and \href{https://www.vexilla-mundi.com}{vexilla-mundi}.
@@ -57,7 +53,7 @@ This package would not have been possible without the base \texttt{PSTricks} and
 \section{Installation and usage of \texttt{pst-flags}}
 
 \paragraph{Installation:}
-As prerequisites for \texttt{pst-flags} you need a working
+As prerequisites for \texttt{pst-flags}, you need working
 versions of \LaTeX{} and \texttt{pstricks}. The style file \texttt{pst-flags.sty} and all corresponding \texttt{.tex} and \texttt{.eps} assets must be somewhere
 in your \TeX-input path, where \texttt{dvips} can
 find it.
@@ -66,7 +62,7 @@ find it.
 
 \paragraph{Usage:}
 Load the packages \texttt{pstricks} and \texttt{pst-flags}
-in that order via the \texttt{usepackage} macro. Now you are ready to use the \texttt{pst-flags} macros within your document body. This macro is described in the next section with all its options. With the help of the following simple \LaTeX-source code you can test whether you have correctly installed the package:
+in that order via the \texttt{usepackage} macro. Now you are ready to use the \texttt{pst-flags} macros within your document body. This macro is described in the next section with all its options. With the help of the following simple \LaTeX-source code, you can test whether you have correctly installed the package:
 
 \begin{verbatim}
 \documentclass{article}
@@ -78,11 +74,11 @@ Flag of US: \rput(0,0){\flagUS[2]}
 \end{verbatim}
 
 \section{Sovereign State Flags}
-Flags are in many different height to width aspect ratio (AR). The flags of India \verb|\flagIN| and UK \verb|\flagUK| uses the aspect ratios of 2:3 and 1:2 respectively. These are the two of the most common aspect ratios used by over 80 and 50 countries respectively. The accuracy of colors, shapes, internal objects and aspect ratio make the flag of a sovereign state unique. Width is the only option needed to draw the flag with macro appended with two letter country code which internally determines the corresponding height. In order to draw a flag with the specific height use the aspect ratio from the table below to calculate the appropriate width and supply it rectangular bracket in centimeters. \texttt{PSTricks} macro \verb|\rput| macro and environment \verb|pspictur| can be also used and encouraged for the accurate placement.
+Flags come in many different height-to-width aspect ratios (AR). The flags of India \verb|\flagIN| and UK \verb|\flagUK| use the aspect ratios of 2:3 and 1:2 respectively. These are the most common aspect ratios used by over 80 and 50 countries respectively. The accuracy of colors, shapes, internal objects, and aspect ratio make the flag of a sovereign state unique. Width is the only option needed to draw the flag with macro appended with a two-letter country code which internally determines the corresponding height. To draw a flag with a specific height, use the aspect ratio from the table below to calculate the appropriate width and supply it in centimeters as the first argument of the macro in rectangular brackets. \texttt{PSTricks} macro \verb|\rput| and environment \verb|pspicture| can also be used and encouraged for accurate placement of the flags.
 
 \paragraph{Example:} To draw \SI{1}{\centi\meter} wide flags use macros: \verb|\flagIN[1]|\; \flagIN[1]\ \hspace{10mm} \verb|\rput(0.1,0){\flagUK[1]}| \rput(0.1,0){\flagUK[1]}
 
-\paragraph{Colors:} Flag colors are defined using country code appended with color name which can be used elsewhere, e.g., ukRed, inGreen, usBlue, deYellow, etc. \verb|\pscircle[linecolor=usRed](0,0){2}|
+\paragraph{Colors:} are defined using country code appended with standard flag color name \texttt{ukRed}, \texttt{inGreen}, \texttt{usBlue}, \texttt{deYellow}, etc. Usage: \verb|\usepackage{pst-flags-colors-html}| \verb|\pscircle[linecolor=usRed](0,0){2}|
 
 \vspace{5mm}
 \begin{table}[!ht]
