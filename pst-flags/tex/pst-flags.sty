@@ -558,7 +558,7 @@
 \psset{dimen=middle, fillstyle=solid, linestyle=none}%
 \psframe[fillcolor=ukBlue](0,0)(24,12)%
 \rput(0,6){\flagUK[12]}%
-\rput(18,6){\psscalebox{1.5}{\input{Flags/Anguilla-flag-seal.tex}}}%
+\rput(18,6){\psscalebox{1.5}{\input{Flags/pst-Anguilla-flag-seal.tex}}}%
 }}
 %-------------------------------------------------------------------------------
 %\rput(0,17){\flagAI[2]}
@@ -574,7 +574,7 @@
 \psset{dimen=middle, fillstyle=solid, linestyle=none}%
 \psframe[fillcolor=ukRed](0,0)(24,12)%
 \rput(0,6){\flagUK[12]}%
-\rput(18,6){\includegraphics[width=54.75mm]{Flags/Bermuda-flag-seal.eps}}%
+\rput(18,6){\includegraphics[width=54.75mm]{Flags/pst-Bermuda-flag-seal.eps}}%
 }}
 %-------------------------------------------------------------------------------
 %\rput(9,17){\flagBM[2]}
@@ -592,7 +592,7 @@
 \psset{dimen=middle, fillstyle=solid, linestyle=none}%
 \psframe[fillcolor=fjCyan](0,0)(24,12)%
 \rput(0,6){\flagUK[12]}%
-\rput(18,6){\includegraphics[width=49.320mm]{Flags/Fiji-flag-seal.eps}}%
+\rput(18,6){\includegraphics[width=49.320mm]{Flags/pst-Fiji-flag-seal.eps}}%
 }}
 %-------------------------------------------------------------------------------
 %\rput(9,17){\flagFJ[2]}
@@ -603,12 +603,701 @@
 %===============================================================================
 % icon Flag IO = British Indian Ocean Territory 1:2
 %-------------------------------------------------------------------------------
+\newcommand{\flagIOWave}[2][4]{%
+\FPeval{\wide}{round(#1/24:3)}\psscalebox{\wide}{%
+\psset{fillstyle=solid,fillcolor=#2,linestyle=solid,linecolor=#2,linewidth=0.001}%
+%
+% wave part 1
+\def\wavea{\pscustom{%
+\psbezier(0,0)
+(0.42856,0)
+(0.64284,0.567239)
+(1.3571601,0.567239)%
+\psline
+(1.3571601,0.567239)
+(1.3571601,1.5921201)%
+\psbezier%(1.3571601,1.5921201)
+(0.64284,1.5921201)
+(0.42856,1.02484)
+(0,1.02484)%
+\closepath}}%
+%
+% Wave part 2a
+\def\waveb{\pscustom{%
+\psbezier(1.3571601,0.567239)
+(2.4285602,0.567239)
+(2.7857201,-0.228801)
+(4.2142804,-0.228801)
+(4.9285602,-0.228801)
+(5.2856802,0.567239)
+(6.0000002,0.567239)%
+\psline
+(6.0000002,0.567239)
+(6.0000002,1.5921201)%
+\psbezier%(6.0000002,1.5921201)
+(5.2856802,1.5921201)
+(4.9285602,0.7960399)
+(4.2142804,0.7960399)
+(2.7857201,0.7960399)
+(2.4285602,1.5921201)
+(1.3571601,1.5921201)%
+\closepath}}%
+%
+\def\waveB{\multirput(0,0)(4.6428399,0){4}{\rput(0,0){\waveb}}}%
+%
+\def\wavec{\pscustom{%
+\psbezier
+(19.92852,0.567239)
+(20.999959,0.567239)
+(21.35716,-0.228801)
+(22.785599,-0.228801)
+(23.50004,-0.228801)
+(23.73108,-0.003201)
+(23.999999,0.158559)%
+\psline
+(23.999999,0.158559)
+(23.999999,1.33596)%
+\psbezier%(23.999999,1.33596)
+(23.73108,1.1741601)
+(23.50004,0.7960399)
+(22.785599,0.7960399)
+(21.35716,0.7960399)
+(20.999959,1.5921201)
+(19.92852,1.5921201)%
+\closepath}}%
+%
+\put(0,0.228801){\multido{\nY=0+2}{6}{\rput(0,\nY){\wavea\waveB\wavec}}}%
+%
+}}
+%-------------------------------------------------------------------------------
+\newcommand{\crownLily}[1][2.8]{% 2.8 wide, 3.2 tall
+\FPeval{\wide}{round(#1/2.8:3)}\psscalebox{\wide}{%
+\pscustom{% left side
+\psbezier(-0.3,0.2)(-0.3,0.5)(-0.5,0.5)(-0.6,0.4)%
+(-0.8,0.2)(-0.5,-0.4)(-1.4,-0.6)%
+(-0.6,0)(-1.5,0.7)(-1.2,1.2)%
+(-0.9,1.5)(-0.6,1.2)(-0.6,1.2)%
+(-0.6,2.2)(0,2.6)(0,2.6)%
+% Right side
+(0,2.6)(0.6,2.2)(0.6,1.2)%
+(0.6,1.2)(0.9,1.5)(1.2,1.2)%
+(1.5,0.7)(0.6,0)(1.4,-0.6)%
+(0.5,-0.4)(0.8,0.2)(0.6,0.4)%
+(0.5,0.5)(0.3,0.5)(0.3,0.2)%
+\psline(0.3,0.2)(0.3,0)(-0.3,0)(-0.3,0.2)%
+}%
+}}%
+%-------------------------------------------------------------------------------
+\newcommand{\crownLilyDouble}[1][2.8]{% 2.8 wide, 3.2 tall
+\FPeval{\wide}{round(#1/2.8:3)}\psscalebox{\wide}{%
+\pscustom{%
+% left side
+\psbezier(-0.2,0.2)(-0.2,0.6)(-0.4,0.6)(-0.4,0.6)%
+(-0.9,0.6)(-0.7,-0.4)(-1.1,-0.4)%
+(-0.6,0.2)(-1.7,1.5)(-0.55,1.1)%
+(-0.5,2)(0,2.4)(0,2.4)%
+% Right side
+(0,2.4)(0.5,2)(0.55,1.1)%
+(1.7,1.5)(0.6,0.2)(1.1,-0.4)%
+(0.7,-0.4)(0.9,0.6)(0.4,0.6)%
+(0.4,0.6)(0.2,0.6)(0.2,0.2)%
+\psline(0.2,0.2)(0.2,0)(-0.2,0)(-0.2,0.2)%
+}%
+\pspolygon(-0.6,0)(-0.4,0.2)(0.4,0.2)(0.6,0)(0.4,-0.2)(-0.4,-0.2)%
+}}%
+%-------------------------------------------------------------------------------
+\definecolor{flagIOCrownRed}{HTML}{c8102e}
+\definecolor{flagIOCrownYellow}{HTML}{fed100}
+\definecolor{flagIOCrownBlue}{HTML}{012169}
+\definecolor{flagIOCrownGreen}{HTML}{306947}
+%-------------------------------------------------------------------------------
+% crown default height = 18, width = 15.2
+\newcommand{\flagIOCrown}[1][4]{%
+\FPeval{\wide}{round(#1/15.2:3)}\psscalebox{\wide}{%
+\psset{dimen=middle,fillstyle=solid,fillcolor=flagIOCrownRed,
+linestyle=solid,linecolor=black, linewidth=0.04}%
+\pscustom{%
+\psbezier(-6.4,6)(-6.4,6)(-7.1,8.8)(-4.6,8.8)%
+(-4.6,8.8)(-3.6,10.3)(-2,9.8)%
+\psline(-2,9.8)(0,9)%
+\psline(0,9)(2,9.8)%
+\psbezier(3.6,10.3)(4.6,8.8)(4.6,8.8)%
+(7.1,8.8)(6.4,6)(6.4,6)%
+\psline(6.4,6)(5.8,4.1)%
+\psbezier(5.8,4.1)(4,4.4)(0,4.4)%
+(-4,4.4)(-5.8,4.1)(-5.8,4.1)%
+\psline(-5.8,4.1)(-6.4,6)%
+}
+%
+% Pearl arm
+\def\pearlBar{%
+\psset{fillstyle=solid,fillcolor=flagIOCrownYellow,
+linestyle=solid,linecolor=black,linewidth=0.04}%
+\pscustom{%
+\psbezier(-6.1,7.7)(-6.1,7.7)(-7.6,11.6)(-4.4,11.8)
+(-3,11.8)(-2,10.6)(0,11.2)
+\psline(0,11.2)(0,11.8)
+\psbezier(-2,11.4)(-3,12.6)(-4.4,12.6)
+\psbezier(-8.6,12.6)(-6.7,7.6)(-6.7,7.6)
+\closepath}
+\psset{fillstyle=none,,fillcolor=white,linestyle=none}%
+\psset{ArrowInside=-o,arrowscale=10.8,arrowLW=0.004,ArrowInsideOffset=-0.02}
+\multido{\nP=0.10+0.14}{7}{%
+\psbezier[ArrowInsidePos=\nP,ArrowInsideOffset=-0.02]{-}(-6.7,7.6)(-6.7,7.6)(-8.6,12.6)(-4.4,12.6)}
+\multido{\nP=0.12+0.20}{4}{%
+\psbezier[ArrowInsidePos=\nP](-4.4,12.6)(-3,12.6)(-2,11.4)(0,11.8)}
+}%
+\rput(0,0){\pearlBar}%
+\rput(0,0){\psscalebox{-1 1}{\pearlBar}}%
+%
+% base 2 - arrow band
+\psset{fillstyle=solid,fillcolor=white,linestyle=solid}%
+\pscustom{%
+\psbezier(-5.8,1.8)(-5.8,1.8)(-5.4,2.2)(0,2.2)
+(5.4,2.2)(5.8,1.8)(5.8,1.8)
+(6,1.6)(6,1.4)(6,1.4)
+(6,1.4)(6.4,0)(0,0)
+(-6.4,0)(-6,1.4)(-6,1.4)
+(-6,1.4)(-6,1.6)(-5.8,1.8)
+}%
+%
+% Base - 1 - wear
+\psscalebox{0.99}{%
+\pscustom[fillstyle=solid,fillcolor=gray!10,linestyle=solid]{%
+\psbezier(-5.6,0.8)(-5.6,0.8)(-4.8,0)(0,0)
+(4.8,0)(5.6,0.8)(5.6,0.8)
+(5.6,0.8)(4,1.2)(0,1.2)
+(-4,1.2)(-5.6,0.8)(-5.6,0.8)
+\closepath%
+}}%
+%
+% base - arrow
+\def\baseArrow{\pscustom[fillstyle=solid,fillcolor=black,linestyle=none]{%
+\psbezier(0,0)(-0.2,0)(-1.1,-0.3)(-1.1,-0.3)%
+(-1.1,-0.3)(-1,-0.1)(-0.8,-0.1)%
+(-1,-0.1)(-1.2,0)(-1.2,0)%
+(-1.2,0)(-1,0.1)(-0.8,0.1)%
+(-1,0.1)(-1.1,0.3)(-1.1,0.3)%
+(-1.1,0.3)(-0.2,0)(0,0)%
+}}%
+%
+\rput{5}(-4,1.55){\baseArrow}%
+\rput{2}(-1.7,1.65){\baseArrow}%
+\rput(0.6,1.7){\baseArrow}%
+\rput{-2}(2.9,1.65){\baseArrow}%
+\rput{-5}(5.2,1.5){\baseArrow}%
+%
+% base band 4 - gemstone band
+\pscustom[fillstyle=solid,fillcolor=flagIOCrownYellow,linestyle=solid,
+linecolor=black,linewidth=0.04]{%
+\psbezier(-5.4,2.2)(-5.4,2.2)(-4,2.5)(0,2.5)
+(4,2.5)(5.4,2.2)(5.4,2.2)
+\psline(5.4,2.2)(5.8,3.8)
+\psbezier(5.8,3.8)(4,4.1)(0,4.1)
+(-4,4.1)(-5.8,3.8)(-5.8,3.8)
+\psline(-5.8,3.8)(-5.4,2.2)
+}%
+%
+% base band 3 - above arrow
+\pscustom[fillstyle=solid,fillcolor=flagIOCrownYellow]{%
+\psbezier(5.6,1.9)(5.6,1.9)(4,2.2)(0,2.2)
+(-4,2.2)(-5.6,1.9)(-5.6,1.9)
+(-5.7,2.1)(-5.6,2.2)(-5.6,2.2)
+(-5.6,2.2)(-4,2.5)(0,2.5)
+(4,2.5)(5.6,2.2)(5.6,2.2)
+(5.6,2.2)(5.7,2.1)(5.6,1.9)
+}%
+%
+% base band 5 - above gemstones
+\pscustom[fillstyle=solid,fillcolor=flagIOCrownYellow]{%
+\psbezier(5.9,3.8)(5.9,3.8)(4,4.1)(0,4.1)
+(-4,4.1)(-5.9,3.8)(-5.9,3.8)
+(-6,4.0)(-5.9,4.1)(-5.9,4.1)
+(-5.9,4.1)(-4,4.4)(0,4.4)
+(4,4.4)(5.9,4.1)(5.9,4.1)
+(5.9,4.1)(6,4.0)(5.9,3.8)
+}
+%
+% crown base 2
+\pscustom[fillstyle=solid,fillcolor=flagIOCrownYellow]{%
+\psline(-6.4,6)(-6,6)
+\psbezier(-6,6)(-5.4,4.9)(-4.7,4.9)
+(-4.3,4.9)(-4,5)(-3.7,5.5)
+\psline(-3.7,5.5)(-3.1,5.5)
+\psbezier(-2.6,5)(-2.3,4.9)(-1.9,4.9)
+(-0.6,4.9)(-0.4,6)(-0.5,6.2)
+\psline(-0.5,6.2)(0.5,6.2)
+\psbezier(0.5,6.2)(0.6,4.9)(1.9,4.9)
+(2.3,4.9)(2.6,5)(3.1,5.5)
+\psline(3.1,5.5)(3.7,5.5)
+\psbezier(4,5)(4.3,4.9)(4.7,4.9)
+(5.4,4.9)(6,6)(6,6)
+\psline(6,6)(6.4,6)
+\psline(6.4,6)(5.8,4.1)
+\psbezier(5.8,4.1)(4,4.4)(0,4.4)
+(-4,4.4)(-5.8,4.1)(-5.8,4.1)
+\psline(-5.8,4.1)(-6.4,6)
+}%
+%
+% crown base 1
+\pscustom[fillstyle=solid,fillcolor=flagIOCrownYellow]{%
+\psline(-5.8,4.1)(-6.4,6)
+\psbezier(-6.4,6)(-5.8,4.6)(-4.8,4.6)
+(-3.8,4.6)(-3.4,5.2)(-3.4,5.2)
+(-3.4,5.2)(-3,4.6)(-2,4.6)
+(-0.6,4.6)(0,5.6)(0,5.6)
+\psbezier(0,5.6)(0.6,4.6)(2,4.6)
+(3,4.6)(3.4,5.2)(3.4,5.2)
+(3.4,5.2)(3.8,4.6)(4.8,4.6)
+(5.8,4.6)(6.4,6)(6.4,6)
+\psline(6.4,6)(5.8,4.1)
+\psbezier(5.8,4.1)(4,4.4)(0,4.4)
+(-4,4.4)(-5.8,4.1)(-5.8,4.1)
+}%
+%
+% Cross side
+\def\crossSide{%
+\psset{fillstyle=solid,fillcolor=flagIOCrownYellow,linestyle=solid,linewidth=0.04}%
+\psscalebox{0.9 0.8}{%
+\pscustom{%
+\psbezier(0.2,0.2)(1,0.2)(1.5,1)(1.6,1.2)
+\psbezier(1.6,1.2)(1.8,0)(1.6,-1.2)
+\psbezier(1.5,-1)(1,-0.2)(0.2,-0.2)
+}%
+\psset{linestyle=solid,linewidth=0.05,fillstyle=none}
+\psbezier(0.2,0.1)(1,0.1)(1.4,0.6)(1.5,0.8)
+\psbezier(1.5,0.8)(1.5,0.8)(1.6,0)(1.5,-0.8)
+\psbezier(1.5,-0.8)(1.4,-0.6)(1,-0.1)(0.2,-0.1)
+}%
+\pscustom{%
+\psbezier(0.2,0.2)(0.2,1)(1,1.5)(1.2,1.6)
+\psbezier(1.2,1.6)(0.5,1.8)(0,1.7)
+\psline(0,1.7)(0,0.2)%(0.2,0.2)
+}
+\psset{linestyle=solid,linewidth=0.05,fillstyle=none}
+\psbezier(0.1,0.2)(0.1,1)(0.6,1.4)(0.8,1.5)
+\psbezier(0.8,1.5)(0.8,1.5)(0.4,1.65)(0,1.55)
+%
+\pscircle[fillstyle=solid,fillcolor=white,linewidth=0.04](0,0){0.4}%
+}%
+\rput{18}(-6.3,5.9){\crossSide}
+\rput{-18}(6.2,5.9){\psscalebox{-1 1}{\crossSide}}
+%
+% Orb
+\psset{fillstyle=solid,fillcolor=flagIOCrownYellow,linestyle=solid,linecolor=black}%
+\pscircle(0,12.6){1}%
+\psframe(-1.1,12.4)(1.1,12.8)%
+\psframe(-0.2,12.8)(0.2,13.8)%
+%
+% Top bar
+\psset{fillstyle=solid,fillcolor=flagIOCrownYellow,linestyle=solid,linewidth=0.04}
+\rput(0,8){\pscustom{%
+\psline(0.7,3.6)(0.7,0)(-0.7,0)(-0.7,3.6)
+\psellipticarcn(0,3.6)(0.7,0.4){180}{0}}}%
+%
+\rput(-0.9,8){\pscustom{%
+\psline(0,3.6)(0,0)(0.4,0)(0.4,3.6)
+\psarc(0.2,3.6){0.2}{0}{180}}}%
+%
+\rput(0.5,8){\pscustom{%
+\psline(0,3.6)(0,0)(0.4,0)(0.4,3.6)
+\psarc(0.2,3.6){0.2}{0}{180}}}%
+%
+% Pears verticle main
+\psset{fillstyle=solid,fillcolor=white,linestyle=solid,linewidth=0.04}
+\multirput(0,0)(0,0.8){5}{\pscircle(0,8.2){0.4}}%
+%
+% cross top
+\psset{fillstyle=solid,fillcolor=flagIOCrownYellow,linestyle=solid,linewidth=0.04}%
+\def\crossTop{%
+\pscustom{%
+\psbezier(0,0.3)(0.7,0.3)(1.2,0.9)(1.2,0.9)%
+\psline(1.2,0.9)(1.2,-0.9)
+\psbezier(1.2,-0.9)(0.7,-0.3)(0,-0.3)%
+}}%
+\multido{\nA=0+90}{4}{\rput{\nA}(0,14.8){\crossTop}}
+\psset{fillstyle=solid,fillcolor=white,linestyle=solid,linewidth=0.04}
+\pscircle(0,14.8){0.5}%
+%
+% Cross main
+\def\crossMain{%
+\psset{fillstyle=solid,fillcolor=flagIOCrownYellow,linewidth=0.04}%
+\pscustom{%
+\psbezier(0.2,0.2)(1,0.2)(1.5,1)(1.6,1.2)
+\psbezier(1.6,1.2)(1.8,0)(1.6,-1.2)
+\psbezier(1.5,-1)(1,-0.2)(0.2,-0.2)
+\psline(0.2,-0.2)(0.2,0.2)}%
+%
+\psset{fillstyle=none,linestyle=solid,linewidth=0.05}%
+\pscustom{%
+\psbezier(0.2,0.1)(1,0.1)(1.4,0.6)(1.5,0.8)
+\psbezier(1.5,0.8)(1.6,0)(1.5,-0.8)
+\psbezier(1.4,-0.6)(1,-0.1)(0.2,-0.1)
+}%
+}%
+\rput(0,6.4){\crossMain}%
+\rput{90}(0,6.4){\crossMain}%
+\rput{180}(0,6.4){\crossMain}%
+\psset{fillstyle=solid,fillcolor=white,linestyle=solid,linewidth=0.04}
+\pscircle(0,6.4){0.4}%
+%
+% Lily
+\psset{fillstyle=solid,fillcolor=flagIOCrownYellow,
+linestyle=solid,linecolor=black,linewidth=0.04}%
+\rput{2}(-3.4,5.6){\crownLily[2.6]}
+\rput{-2}(3.4,5.6){\crownLily[2.6]}
+\psset{linewidth=0.05}%
+\rput{2}(-3.4,5.6){\crownLilyDouble[2.6]}
+\rput{-2}(3.4,5.6){\crownLilyDouble[2.6]}
+%
+% Supphire
+\psset{fillstyle=none,fillcolor=flagIOCrownBlue,
+linestyle=solid,linecolor=black,linewidth=0.04}%
+\rput(0,2.7){\psframe[framearc=0.1](-1.2,0)(1.2,1.2)}%
+\psset{fillstyle=solid}%
+\rput(0,2.9){\psframe[framearc=0.2](-1,0)(1,0.8)}%
+\psline(-0.98,2.95)(0.98,3.65)%
+\psline(-0.98,3.65)(0.98,2.95)%
+%\psset{fillstyle=solid,fillcolor=cyan!20,linestyle=solid,linecolor=black}%
+\rput(0,3.1){\psframe(-0.6,0)(0.6,0.4)}%
+%
+% Emerald
+\psset{fillstyle=none,fillcolor=flagIOCrownGreen,linestyle=solid,linecolor=black}%
+\rput{5}(-3,2.7){\psframe[framearc=1](-0.8,0)(0.8,1)}%
+\rput{-5}(3,2.7){\psframe[framearc=1](-0.8,0)(0.8,1)}%
+\psset{fillstyle=solid,fillcolor=flagIOCrownGreen,linestyle=solid,linecolor=black}%
+\rput{5}(-3,2.9){\psframe[framearc=1](-0.6,0)(0.6,0.6)}%
+\rput{-5}(3,2.9){\psframe[framearc=1](-0.6,0)(0.6,0.6)}%
+%
+% Ruby Holder
+\psset{fillstyle=solid,fillcolor=flagIOCrownYellow,linestyle=solid,linecolor=black}%
+\rput{9}(-4.7,3.1){\pspolygon(0,0)(-1,0.6)(-1.1,0)(-1,-0.6)}%
+\rput{-9}(4.7,3.1){\psscalebox{-1 1}{\pspolygon(0,0)(-1,0.6)(-1.1,0)(-1,-0.6)}}%
+%
+% Ruby
+\psset{fillstyle=solid,fillcolor=flagIOCrownRed,linestyle=solid,linecolor=black}%
+\rput{9}(-4.7,3.1){\pspolygon(-0.3,0)(-1,0.4)(-1.2,0)(-1,-0.4)}%
+\rput{-9}(4.7,3.1){\psscalebox{-1 1}{\pspolygon(-0.3,0)(-1,0.4)(-1.2,0)(-1,-0.4)}}%
+% Ruby line
+\rput{9}(-4.7,3.1){\psline(-0.3,0)(-1.2,0)}%
+\rput{-9}(4.7,3.1){\psscalebox{-1 1}{\psline(-0.3,0)(-1.2,0)}}%
+%
+% Main pearls
+\psset{fillstyle=solid,fillcolor=white,linestyle=solid,linecolor=black}%
+\rput(-1.7,2.95){\pscircle(0,0){0.2}}%
+\rput(-1.7,3.65){\pscircle(0,0){0.2}}%
+\rput(1.7,2.95){\pscircle(0,0){0.2}}%
+\rput(1.7,3.65){\pscircle(0,0){0.2}}%
+\rput(-4.3,2.8){\pscircle(0,0){0.2}}%
+\rput(-4.3,3.5){\pscircle(0,0){0.2}}%
+\rput(4.3,2.8){\pscircle(0,0){0.2}}%
+\rput(4.3,3.5){\pscircle(0,0){0.2}}%
+%
+}}
+%-------------------------------------------------------------------------------
+\newcommand{\flagIOTree}{%
+\psset{xunit=.5pt,yunit=.5pt,runit=.5pt}
+\begin{pspicture}(217.79797171,400.6768943)
+{
+\newrgbcolor{curcolor}{0.63529414 0.26274511 0}
+\pscustom[linestyle=solid,linecolor=black,fillstyle=solid,fillcolor=curcolor]
+{
+\newpath
+\moveto(110.00686488,0.91796517)
+\curveto(109.22441575,1.34301084)(108.01705323,2.8425384)(107.3238463,4.25026123)
+\lineto(106.06346457,6.80975729)
+\lineto(106.2065537,38.46938942)
+\curveto(106.36318488,73.12388895)(107.16308409,159.82866627)(107.77091528,208.03616611)
+\curveto(108.03172535,228.72095729)(108.3035263,260.93329997)(108.61050331,258.58795572)
+\lineto(116.13880441,247.43354942)
+\curveto(116.67893291,248.95839603)(117.07217386,204.7890984)(117.59145449,147.39993934)
+\curveto(118.9711748,-5.08116554)(118.93804346,9.22419509)(117.91856504,6.15484076)
+\curveto(116.94707528,3.22997777)(114.04252346,0.08420139)(112.34989606,0.12369745)
+\curveto(111.8436737,0.13552737)(110.78931402,0.49295729)(110.00686488,0.91796517)
+\closepath
+}
+}
+{
+\newrgbcolor{curcolor}{0 0.42745098 0}
+\pscustom[linestyle=solid,linecolor=black,fillstyle=solid,fillcolor=curcolor]
+{
+\newpath
+\moveto(141.90392693,315.3556395)
+\lineto(165.2001789,332.58884895)
+\lineto(151.76215559,328.18305367)
+\lineto(175.05840378,345.41630091)
+\lineto(161.62038047,341.01050564)
+\lineto(184.89773858,354.45987887)
+\lineto(169.01412283,350.63117965)
+\lineto(194.10032504,363.65347761)
+\lineto(178.8533178,359.67456863)
+\lineto(197.23973291,374.27817556)
+\lineto(181.33707591,366.66537934)
+\lineto(191.19506268,379.4929258)
+\lineto(174.45848315,368.28859572)
+\lineto(171.71275465,380.30200548)
+\lineto(161.83549606,363.69040359)
+\lineto(160.0646778,371.68525336)
+\lineto(151.9963011,354.64704107)
+\lineto(150.8620989,362.49156391)
+\lineto(144.60256252,345.02636706)
+\lineto(141.02276409,353.44798595)
+\lineto(134.74433386,332.19891509)
+\lineto(131.16453543,340.62057178)
+\lineto(126.3254211,324.2427828)
+\lineto(128.71986898,325.05205525)
+\lineto(120.552,319.47237651)
+\lineto(128.09914961,340.41454973)
+\lineto(119.93128063,334.83487099)
+\lineto(127.47843024,355.77700643)
+\lineto(119.31056126,350.19732769)
+\lineto(124.57611213,367.90304611)
+\lineto(118.84502173,361.71925525)
+\lineto(122.30811213,379.87159666)
+\lineto(115.94269984,373.84513619)
+\lineto(117.60357165,392.44430469)
+\lineto(107.96621102,383.42661651)
+\lineto(100.49194205,400.48791414)
+\lineto(101.11241953,385.12550658)
+\lineto(92.16865134,398.74901399)
+\lineto(98.98625008,378.0482354)
+\lineto(88.39518236,388.27780643)
+\lineto(101.88856063,365.92239981)
+\lineto(90.66318992,376.30927477)
+\lineto(102.35410016,354.4004269)
+\lineto(93.56552315,364.18322753)
+\lineto(102.97481953,339.03797021)
+\lineto(94.18624252,348.82074816)
+\lineto(103.59554268,323.67547572)
+\lineto(94.80696189,333.45829147)
+\lineto(103.20325039,311.75514816)
+\lineto(96.26554205,319.86178123)
+\lineto(97.6386822,309.57761115)
+\lineto(82.40614299,329.05113556)
+\lineto(83.77928315,318.76696548)
+\lineto(68.54678173,338.24048989)
+\lineto(69.91993323,327.95628202)
+\lineto(58.15212472,345.13253399)
+\lineto(59.52526488,334.84836391)
+\lineto(47.75769449,352.02446469)
+\lineto(49.13083465,341.74029462)
+\lineto(34.58485795,356.07188517)
+\lineto(39.42295559,343.49029147)
+\lineto(22.78523717,349.8347954)
+\lineto(33.86625638,337.80062847)
+\lineto(17.9150778,339.00316076)
+\lineto(38.01772724,330.36127099)
+\lineto(25.53151748,329.26641745)
+\lineto(48.41215748,323.46934028)
+\lineto(35.92594772,322.37448674)
+\lineto(58.80681449,316.5772584)
+\lineto(46.32056693,315.48244265)
+\lineto(72.66621354,307.38794186)
+\lineto(60.17996598,306.29308832)
+\lineto(81.15073512,300.04069147)
+\lineto(85.48823433,294.32105682)
+\lineto(63.59435339,305.6076332)
+\lineto(70.1697978,296.93698123)
+\lineto(47.73395906,304.54214658)
+\lineto(54.30940346,295.87153241)
+\lineto(35.70288,302.82272611)
+\lineto(42.27855118,294.15226312)
+\lineto(23.67229228,301.10345682)
+\lineto(30.2476989,292.43280485)
+\lineto(11.09975811,295.70273871)
+\lineto(22.04660409,290.05956391)
+\lineto(0.18893102,274.9227828)
+\lineto(20.96278677,282.69670406)
+\lineto(11.13596598,269.27934343)
+\lineto(28.62199937,281.38872296)
+\lineto(19.33708724,271.65281115)
+\lineto(40.65286299,283.10818123)
+\lineto(31.36772409,273.37208044)
+\lineto(52.14180661,281.14619068)
+\lineto(43.39880315,275.09150091)
+\lineto(68.00218961,282.21167729)
+\lineto(59.25914835,276.15698753)
+\lineto(83.32063748,279.59575288)
+\lineto(81.54350362,276.1252395)
+\lineto(74.38461354,273.12595761)
+\lineto(84.8132863,272.65703162)
+\lineto(63.28749354,263.6324269)
+\lineto(73.7161663,263.16350091)
+\lineto(52.19033575,254.13889619)
+\lineto(62.6190463,253.66993241)
+\lineto(43.86742677,247.01864422)
+\lineto(54.29609953,246.54971824)
+\lineto(35.54466898,239.89858123)
+\lineto(45.97334173,239.42961745)
+\lineto(29.66172094,230.17056863)
+\lineto(42.8647937,232.07507257)
+\lineto(34.20781228,219.97363005)
+\lineto(47.74507087,226.85921115)
+\lineto(44.30226142,214.52328674)
+\lineto(55.73360504,228.99819698)
+\lineto(55.0651578,219.03574028)
+\lineto(64.05640063,236.11829777)
+\lineto(63.38795339,226.15584107)
+\lineto(72.37930961,243.23851194)
+\lineto(71.71086236,233.27605525)
+\lineto(83.47642961,252.73208044)
+\lineto(82.80798236,242.76958595)
+\lineto(94.57356094,262.22561115)
+\lineto(93.9051326,252.26311666)
+\lineto(97.70208,258.53675446)
+\lineto(98.15232,254.62611509)
+\lineto(98.15232,254.62622847)
+\lineto(102.29232,262.86378438)
+\lineto(104.65020094,242.38411194)
+\lineto(108.79020094,250.62166784)
+\lineto(111.14808189,230.14195761)
+\lineto(115.28808189,238.37951351)
+\lineto(116.02154079,220.96027572)
+\lineto(120.16152945,229.19783162)
+\lineto(120.89490142,211.7787828)
+\lineto(125.03490142,220.01633871)
+\lineto(129.46272378,203.65529304)
+\lineto(131.97820346,214.95347257)
+\lineto(142.17065575,203.76962375)
+\lineto(139.36734992,217.0700458)
+\lineto(151.62973984,210.00482375)
+\lineto(139.81277102,224.24929619)
+\lineto(150.45064819,220.24473556)
+\lineto(134.93940661,233.4308269)
+\lineto(145.57728378,229.42622847)
+\lineto(130.0659515,242.61250879)
+\lineto(140.70382866,238.60791036)
+\lineto(123.56807055,254.85462532)
+\lineto(134.20594772,250.85006469)
+\lineto(118.75422236,266.4628017)
+\lineto(122.38913008,265.09446154)
+\lineto(137.53801701,249.98330564)
+\lineto(135.06698835,260.1148584)
+\lineto(152.32458331,241.93121115)
+\lineto(149.85355465,252.06276391)
+\lineto(167.11114961,233.87915446)
+\lineto(164.64012094,244.01070721)
+\lineto(178.20117543,227.84007414)
+\lineto(175.73014677,237.9716269)
+\lineto(189.29099717,221.80106942)
+\lineto(186.8199685,231.93262217)
+\lineto(202.8420926,218.81463792)
+\lineto(196.67431181,230.95924265)
+\lineto(213.92208,225.96002375)
+\lineto(201.59671181,237.06495603)
+\lineto(217.60899024,237.13136233)
+\lineto(196.66448126,244.14367099)
+\lineto(208.98002268,246.22316706)
+\lineto(185.57465575,250.18263792)
+\lineto(197.89019717,252.26213399)
+\lineto(174.48462614,256.22175603)
+\lineto(186.80016378,258.3012521)
+\lineto(159.69805984,264.27381273)
+\lineto(172.01359748,266.35330879)
+\lineto(144.91149732,272.32586942)
+\lineto(157.22703118,274.40536548)
+\lineto(125.88696189,281.05495288)
+\lineto(152.91221291,284.41956391)
+\lineto(141.5287748,287.80945997)
+\lineto(168.55402961,291.17407099)
+\lineto(157.1705915,294.56400485)
+\lineto(184.1958463,297.92861588)
+\lineto(172.81240819,301.31851194)
+\lineto(195.92732598,302.99454343)
+\lineto(184.54388031,306.3844395)
+\lineto(207.65858268,308.0603954)
+\lineto(196.27513701,311.45029147)
+\lineto(217.60883906,316.50979383)
+\lineto(202.31483717,318.21103477)
+\lineto(216.17533984,328.3492395)
+\lineto(198.75220535,324.97839225)
+\lineto(206.9211515,336.81152611)
+\lineto(189.1500737,324.98466627)
+\lineto(193.40845606,335.12906942)
+\lineto(177.41882079,319.9188143)
+\lineto(181.67719937,330.06325525)
+\lineto(165.68734866,314.85284895)
+\lineto(169.94572724,324.99728989)
+\lineto(150.04553197,308.09834186)
+\lineto(154.30391055,318.2427828)
+\lineto(134.40371528,301.34383477)
+\lineto(136.2360378,305.62808044)
+}}
+\psset{fillstyle=none,linestyle=solid}
+\newrgbcolor{curcolor}{0 0 0}
+\psset{linewidth=0.37795276,linecolor=curcolor}
+{\pscustom{\newpath\moveto(136.2360378,305.62808044)\lineto(155.34195024,319.76154816)}}
+{\pscustom{\newpath\moveto(105.67071496,271.71925525)\lineto(142.17067843,203.76962375)}}
+{\pscustom{\newpath\moveto(111.55379528,281.44738123)\lineto(213.92207849,225.96002375)}}
+{\pscustom{\newpath\moveto(115.58411339,285.40768359)\lineto(216.17533871,328.3492395)}}
+{\pscustom{\newpath\moveto(113.78668346,290.36453399)\lineto(110.36681575,363.82093714)\lineto(100.49194583,400.48791792)}}
+{\pscustom{\newpath\moveto(118.48243276,293.28338753)\lineto(160.50523465,352.63920485)\lineto(166.11778394,357.46989462)\lineto(191.19508498,379.49293714)}}
+{\pscustom{\newpath\moveto(113.78668346,290.36453399)\lineto(22.78526362,349.83490879)}}
+{\pscustom{\newpath\moveto(115.58411339,285.40768359)\lineto(53.53830425,290.63450564)\lineto(41.73669543,290.47096548)\lineto(29.70586583,288.75169619)\lineto(0.18897638,274.92289619)}}
+{\pscustom{\newpath\moveto(106.68153449,281.06712296)\lineto(34.20783496,219.97374343)}}
+{\pscustom{\newpath\moveto(129.46274646,203.65529304)\lineto(130.78527496,224.96510091)\lineto(151.62973984,210.00482375)}}
+{\pscustom{\newpath\moveto(120.8949052,211.7787828)\lineto(127.48227402,231.11408989)\lineto(150.45064819,220.24473556)}}
+{\pscustom{\newpath\moveto(111.14810457,230.14195761)\lineto(116.08758425,252.3268395)\lineto(140.70382866,238.60791036)}}
+{\pscustom{\newpath\moveto(104.65020472,242.38411194)\lineto(109.56680315,264.46615288)\lineto(134.20594772,250.85006469)}}
+{\pscustom{\newpath\moveto(108.39238299,274.2211891)\lineto(120.57167244,265.77863162)}}
+{\pscustom{\newpath\moveto(137.53803969,249.98330564)\lineto(125.20270488,274.2724395)\lineto(157.22703118,274.40536548)}}
+{\pscustom{\newpath\moveto(152.32458331,241.93121115)\lineto(139.9892674,266.2203828)\lineto(172.01359748,266.35330879)}}
+{\pscustom{\newpath\moveto(167.11114961,233.87915446)\lineto(154.77582992,258.16832611)\lineto(186.80016378,258.3012521)}}
+{\pscustom{\newpath\moveto(178.20117543,227.84007414)\lineto(169.56239622,250.11623162)\lineto(195.49495899,252.66737493)}}
+{\pscustom{\newpath\moveto(189.29099717,221.80106942)\lineto(180.65242583,244.07711351)\lineto(208.98002079,246.22316706)}}
+{\pscustom{\newpath\moveto(202.84209071,218.81463792)\lineto(188.04570709,240.05108517)\lineto(217.60898872,237.13136233)}}
+{\pscustom{\newpath\moveto(152.91221291,284.41956391)\lineto(122.3244548,287.82212139)\lineto(132.04572472,302.52830091)}}
+{\pscustom{\newpath\moveto(168.55402961,291.17407099)\lineto(137.96626772,294.57666627)\lineto(154.30391055,318.2427828)}}
+{\pscustom{\newpath\moveto(184.1958463,297.92861588)\lineto(153.60808441,301.33117336)\lineto(169.94572724,324.99728989)}}
+{\pscustom{\newpath\moveto(195.92732674,302.99454343)\lineto(169.2499011,308.08568044)\lineto(181.67719937,330.06325525)}}
+{\pscustom{\newpath\moveto(207.65858079,308.0603954)\lineto(180.98137323,313.1516458)\lineto(193.40845682,335.12906942)}}
+{\pscustom{\newpath\moveto(217.60883754,316.50979383)\lineto(188.80228157,316.52888044)\lineto(206.92114885,336.81152611)}}
+{\pscustom{\newpath\moveto(154.30391055,318.2427828)\lineto(127.91882835,306.61200485)\lineto(122.91044409,309.95836076)}}
+{\pscustom{\newpath\moveto(165.2001789,332.58884895)\lineto(133.39503874,317.36366469)\lineto(131.16455811,340.62068517)}}
+{\pscustom{\newpath\moveto(175.05840378,345.41630091)\lineto(145.28656252,331.14333084)\lineto(141.02276409,353.44798595)}}
+{\pscustom{\newpath\moveto(184.89773858,354.45987887)\lineto(153.90009071,343.30966784)\lineto(150.8620989,362.49156391)}}
+{\pscustom{\newpath\moveto(194.10032693,363.65348517)\lineto(160.50523465,352.63920485)\lineto(160.0646778,371.68525714)}}
+{\pscustom{\newpath\moveto(197.2397348,374.27817556)\lineto(166.11777638,357.46989462)\lineto(171.71275465,380.30200548)}}
+{\pscustom{\newpath\moveto(117.60357543,392.44430469)\lineto(108.49241575,370.40989714)\lineto(92.16867402,398.74902532)}}
+{\pscustom{\newpath\moveto(122.30811213,379.87159666)\lineto(110.36682331,363.82071792)\lineto(88.39522394,388.27781777)}}
+{\pscustom{\newpath\moveto(124.57611213,367.90304611)\lineto(110.83235528,352.29897178)\lineto(90.6631937,376.30927855)}}
+{\pscustom{\newpath\moveto(127.47843402,355.77700643)\lineto(111.45307465,336.93651509)\lineto(93.56552315,364.18323509)}}
+{\pscustom{\newpath\moveto(128.09914961,340.41454973)\lineto(112.07379402,321.5740584)\lineto(94.18624252,348.82074816)}}
+{\pscustom{\newpath\moveto(94.80696567,333.45829147)\lineto(112.69451339,306.2116017)\lineto(128.71986898,325.05205525)\lineto(118.48243654,293.28338753)\lineto(113.78668346,290.36453399)}}
+{\pscustom{\newpath\moveto(96.26554583,319.86178123)\lineto(105.94152567,294.69889619)\lineto(101.34837543,295.38646784)}}
+{\pscustom{\newpath\moveto(82.40618457,329.05124895)\lineto(92.08215307,303.88821273)\lineto(60.17996598,306.29308832)}}
+{\pscustom{\newpath\moveto(68.54680441,338.24060328)\lineto(78.22277291,313.07752926)\lineto(46.32058583,315.48244265)}}
+{\pscustom{\newpath\moveto(58.15217386,345.13264737)\lineto(64.36339276,322.26688359)\lineto(35.92596661,322.37448674)}}
+{\pscustom{\newpath\moveto(47.75771339,352.02446469)\lineto(53.96876598,329.15896548)\lineto(25.53154394,329.26653084)}}
+{\pscustom{\newpath\moveto(34.58491465,356.07199855)\lineto(47.03907402,333.75362375)\lineto(17.91510425,339.00327414)}}
+{\pscustom{\newpath\moveto(11.09978457,295.7028521)\lineto(29.70586583,288.75169619)\lineto(11.13600378,269.27945682)}}
+{\pscustom{\newpath\moveto(23.67231496,301.10357021)\lineto(41.73669543,290.47096548)\lineto(19.33714394,271.65292454)}}
+{\pscustom{\newpath\moveto(35.70292535,302.8228395)\lineto(53.53829291,290.63450564)\lineto(31.36776567,273.37219383)}}
+{\pscustom{\newpath\moveto(47.73397417,304.54214658)\lineto(69.08601449,289.57446154)\lineto(43.39883339,275.0916143)}}
+{\pscustom{\newpath\moveto(63.59434583,305.6076332)\lineto(84.68935559,288.89388202)\lineto(59.25920504,276.15710091)}}
+{\pscustom{\newpath\moveto(78.91282394,302.99178438)\lineto(100.04454425,286.52748202)\lineto(82.77876283,275.91441745)}}
+{\pscustom{\newpath\moveto(78.91282394,302.99178438)\lineto(113.78668346,290.36453399)\lineto(115.58411339,285.40768359)\lineto(111.5537915,281.44738123)\lineto(101.20466268,280.95037336)\lineto(79.76634709,272.65487729)}}
+{\pscustom{\newpath\moveto(74.38463622,273.12607099)\lineto(100.7905852,276.93496548)\lineto(93.90515528,252.26323005)}}
+{\pscustom{\newpath\moveto(63.28751622,263.63254028)\lineto(89.69345386,267.44143477)\lineto(82.80802394,242.76969934)}}
+{\pscustom{\newpath\moveto(52.19038488,254.13900958)\lineto(78.59633386,257.94790406)\lineto(71.71090394,233.27616863)}}
+{\pscustom{\newpath\moveto(43.86746457,247.01875761)\lineto(67.4992063,248.45433556)\lineto(63.38798362,226.15595446)}}
+{\pscustom{\newpath\moveto(35.54469543,239.89869462)\lineto(59.17628598,241.33412139)\lineto(55.06521449,219.03585367)}}
+{\pscustom{\newpath\moveto(29.66177386,230.17068202)\lineto(53.62772409,236.58737493)\lineto(44.30230299,214.52340013)}}
+\end{pspicture}
+}%
+%-------------------------------------------------------------------------------
 \newcommand{\flagIO}[1][4]{%
 \FPeval{\wide}{round(#1/24:3)}\psscalebox{\wide}{%
 \psset{dimen=middle, fillstyle=solid, linestyle=none}%
 %\psframe[fillcolor=ukRed](0,0)(24,12)%
 %\rput(0,6){\flagUK[12]}%
-\rput(12,6){\includegraphics[width=24cm]{Flags/British-Indian-Ocean-Territory-flag.eps}}%
+%\rput(12,6){\includegraphics[width=24cm]{Flags/British-Indian-Ocean-Territory-flag.eps}}%
+%
+\psframe[fillcolor=white](0,0)(24,12)%
+\rput(0,0){\flagIOWave[24]{ukBlue}}
+\rput(0,6){\flagUK[12]}%
+\rput(17.84,5.6){\psscalebox{1.5}{\flagIOTree}}%
+\rput(17.84,2.72){\flagIOCrown[2.8]}%
 }}
 %-------------------------------------------------------------------------------
 %\rput(3,15){\flagIO[2]}
@@ -644,7 +1333,7 @@
 \psset{dimen=middle, fillstyle=solid, linestyle=none}%
 \psframe[fillcolor=ukBlue](0,0)(24,12)%
 \rput(0,6){\flagUK[12]}%
-\rput(18,6){\includegraphics[width=6.4381cm]{Flags/Cayman-Islands-flag-seal.eps}}%
+\rput(18,6){\includegraphics[width=6.4381cm]{Flags/pst-Cayman-Islands-flag-seal.eps}}%
 }}
 %-------------------------------------------------------------------------------
 %\rput(15,15){\flagKY[2]}
@@ -660,7 +1349,7 @@
 \psset{dimen=middle, fillstyle=solid, linestyle=none}%
 \psframe[fillcolor=ukRed](0,0)(24,12)%
 \rput(0,6){\flagUK[12]}%
-\rput(18,6){\includegraphics[width=65.296mm]{Flags/British-Virgin-Islands-flag-seal.eps}}%
+\rput(18,6){\includegraphics[width=65.296mm]{Flags/pst-British-Virgin-Islands-flag-seal.eps}}%
 }}
 %-------------------------------------------------------------------------------
 %\rput(9,17){\flagVG[2]}
@@ -701,7 +1390,7 @@
 \FPeval{\wide}{round(#1/24:3)}\psscalebox{\wide}{%
 \psset{dimen=middle, fillstyle=solid, linestyle=none}%
 %\psframe[fillcolor=ukBlue](0,0)(24,12)%
-\rput(12,6){\includegraphics[width=24cm]{Flags/Christmas-Island-flag.eps}}%
+\rput(12,6){\includegraphics[width=24cm]{Flags/pst-Christmas-Island-flag.eps}}%
 }}
 %-------------------------------------------------------------------------------
 %\rput(0,13){\flagCX[2]}
@@ -716,7 +1405,7 @@
 \FPeval{\wide}{round(#1/24:3)}\psscalebox{\wide}{%
 \psset{dimen=middle, fillstyle=solid, linestyle=none}%
 %\psframe[fillcolor=ukBlue](0,0)(24,12)%
-\rput(12,6){\includegraphics[width=24cm]{Flags/Cocos-Keeling-Islands-flag.eps}}%
+\rput(12,6){\includegraphics[width=24cm]{Flags/pst-Cocos-Keeling-Islands-flag.eps}}%
 }}
 %-------------------------------------------------------------------------------
 %\rput(3,13){\flagCC[2]}
@@ -734,7 +1423,7 @@
 \FPeval{\wide}{round(#1/4:3)}\psscalebox{\wide}{%
 \psset{dimen=middle, fillstyle=solid, linestyle=none}%
 %\psframe[fillcolor=ukRed](0,0)(24,12)%
-\rput(2,1){\includegraphics[width=4cm]{Flags/Brunei-flag.eps}}%
+\rput(2,1){\includegraphics[width=4cm]{Flags/pst-Brunei-flag.eps}}%
 }}
 %-------------------------------------------------------------------------------
 %\rput(9,17){\flagBN[2]}
@@ -819,7 +1508,7 @@
 \psframe[fillcolor=asBlue](0,0)(20,10)%
 \pspolygon[fillcolor=asRed](0,5)(20,10)(20,0)%
 \pspolygon[fillcolor=white](2,5)(20,9.4642)(20,0.5358)%
-\rput(16.5,5){\includegraphics[width=63.581mm]{Flags/American-Samoa-flag-seal.eps}}%
+\rput(16.5,5){\includegraphics[width=63.581mm]{Flags/pst-American-Samoa-flag-seal.eps}}%
 }}
 %-------------------------------------------------------------------------------
 %\rput(0,17){\flagAS[2]}
@@ -2808,7 +3497,7 @@
 \newcommand{\flagPYseal}[1]{%
 \FPeval{\wide}{round(#1/2:3)}\psscalebox{\wide}{%
 \psset{fillstyle=solid,fillcolor=pyGreen,linestyle=solid,linecolor=black}%
-\rput(0.2,0){\input{Flags/Paraguay-seal-wreath.tex}}%
+\rput(0.2,0){\input{Flags/pst-Paraguay-seal-wreath.tex}}%
 \psset{fillstyle=none,linestyle=solid,linecolor=black}%
 \pscircle[dimen=outer,linewidth=0.8mm](0,0){2}%
 \pscircle[dimen=inner,linewidth=0.4mm](0,0){1.6}%
@@ -2848,7 +3537,7 @@
 \psframe[fillcolor=omGreen](3,0)(12,2)%
 \pspolygon[fillcolor=omRed](0,0)(0,6)(3,6)(3,4)(12,4)(12,2)(3,2)(3,0)%
 \psset{fillcolor=white,linestyle=solid,linecolor=omRed}%
-\rput(1.5,4.87){\input{Flags/Oman-seal.tex}}%
+\rput(1.5,4.87){\input{Flags/pst-Oman-seal.tex}}%
 }}
 %-------------------------------------------------------------------------------
 %\rput(3,14){\flagOM[2]}
@@ -2872,29 +3561,12 @@
 \psframe[fillcolor=white](0,1)(5,2)%
 \psframe[fillcolor=niBlue](0,0)(5,1)%
 \psset{fillstyle=none,linestyle=none}%
-\rput(2.5,1.5){\psscalebox{0.1}{\input{Flags/Nicaragua-flag-seal.tex}}}%
+\rput(2.5,1.5){\psscalebox{0.1}{\input{Flags/pst-Nicaragua-flag-seal.tex}}}%
 }}
 %-------------------------------------------------------------------------------
 %\rput(9,14){\flagNI[2]}
 %\rput(10,13.5){\scriptsize{NI @ \number\inputlineno}}
 %\rput(0,0){\flagNI[4]}
-%===============================================================================
-%\rput(2.5,1.5){\psscalebox{0.11}{\input{Flags/Nicaragua-seal.tex}}}%
-%\rput(2.5,1.5){\psscalebox{0.15}{\input{Flags/Nicaragua-seal-a.tex}}}%
-%\rput(2.5,1.5){\psscalebox{0.15}{\input{Flags/Nicaragua-seal-hill.tex}}}%
-%\psset{fillstyle=solid,fillcolor=niBlue, linestyle=solid, linecolor=niBlue}%
-%\rput(2.5,1.5){\psscalebox{0.15}{\input{Flags/Nicaragua-seal-water.tex}}}%
-%\rput(2.5,1.5){\psscalebox{0.11}{\input{Flags/Nicaragua-seal-rays.tex}}}%
-%\rput(2,2){\psscalebox{0.75}{\input{Flags/Nicaragua-seal-slogan.tex}}}%
-%\rput(2,2){\psscalebox{0.75}{\input{Flags/Nicaragua-seal-hill.tex}}}%
-%\rput(2,2){\psscalebox{0.75}{\input{Flags/Nicaragua-seal-water.tex}}}%
-%\rput(2,2){\psscalebox{0.75}{\input{Flags/Nicaragua-seal-rays.tex}}}%
-%\pspolygon[fillstyle=solid,fillcolor=cyan,linestyle=none](0,0)(3,0.4)(3.4,0)(3,-0.4)
-%\rput(2,2){\psscalebox{0.75}{\input{Flags/Nicaragua-seal-hill-new.tex}}}%
-%\psset{fillstyle=none}
-%\rput(2,2){\psscalebox{1.5}{\input{Flags/Nicaragua-seal-rainbow.tex}}}%
-%\psset{fillstyle=none,linestyle=none}%
-%\rput(2,2){\psscalebox{0.75}{\input{Flags/Nicaragua-seal-water-new.tex}}}%
 %===============================================================================
 
 %===============================================================================
@@ -3005,7 +3677,7 @@
 \psframe[fillcolor=white](0,2)(9,4)%
 \psframe[fillcolor=black](0,0)(9,2)%
 %\psset{fillcolor=white,linestyle=solid,linecolor=omRed}%
-\rput(4.5,3){\psscalebox{1.5}{\input{Flags/Iraq-flag-slogan.tex}}}%
+\rput(4.5,3){\psscalebox{1.5}{\input{Flags/pst-Iraq-flag-slogan.tex}}}%
 }}
 %-------------------------------------------------------------------------------
 %\rput(15,14){\flagIQ[2]}
@@ -3189,14 +3861,14 @@
 %
 \psset{fillcolor=white,linestyle=solid,linewidth=0.002}%
 %\rput(0,0){\input{Flags/Malta-flag-cross.tex}}%
-\rput(0.66,1.14){\psscalebox{1.5}{\input{Flags/Malta-flag-seal-corner.tex}}}%
-\rput{-90}(1.14,1.04){\psscalebox{1.5}{\input{Flags/Malta-flag-seal-corner.tex}}}%
-\rput{-180}(1.04,0.56){\psscalebox{1.5}{\input{Flags/Malta-flag-seal-corner.tex}}}%
-\rput{90}(0.56,0.66){\psscalebox{1.5}{\input{Flags/Malta-flag-seal-corner.tex}}}%
+\rput(0.66,1.14){\psscalebox{1.5}{\input{Flags/pst-Malta-flag-seal-corner.tex}}}%
+\rput{-90}(1.14,1.04){\psscalebox{1.5}{\input{Flags/pst-Malta-flag-seal-corner.tex}}}%
+\rput{-180}(1.04,0.56){\psscalebox{1.5}{\input{Flags/pst-Malta-flag-seal-corner.tex}}}%
+\rput{90}(0.56,0.66){\psscalebox{1.5}{\input{Flags/pst-Malta-flag-seal-corner.tex}}}%
 \psset{fillcolor=black,linestyle=none}%
-\rput(0.934,0.85){\psscalebox{1.5}{\input{Flags/Malta-flag-seal-text.tex}}}%
+\rput(0.934,0.85){\psscalebox{1.5}{\input{Flags/pst-Malta-flag-seal-text.tex}}}%
 \psset{fillstyle=none,linestyle=solid}%
-\rput(0.934,0.85){\psscalebox{1.5}{\input{Flags/Malta-flag-seal-horse.tex}}}%
+\rput(0.934,0.85){\psscalebox{1.5}{\input{Flags/pst-Malta-flag-seal-horse.tex}}}%
 }%
 \rput(0.2,4.1){\cross}%
 %
@@ -3227,7 +3899,7 @@
 %\rput(105,60){\psscalebox{1.5}{\input{Flags/Mexico-flag-seal.tex}}}%
 %
 %\graphicspath{{./Flags/}}
-\rput(10.5,6){\includegraphics[width=5.25cm]{Flags/Mexico-flag-seal.eps}}
+\rput(10.5,6){\includegraphics[width=5.25cm]{Flags/pst-Mexico-flag-seal.eps}}
 %\epsfig{file=./Flags/Mexico-flag-seal.eps}
 %
 }}
@@ -3254,7 +3926,7 @@
 \psframe[fillcolor=mdBlue](0,0)(2,3)%
 }
 % seal
-\rput(3,1.5){\includegraphics[width=1.2cm]{Flags/Moldova-flag-seal}}
+\rput(3,1.5){\includegraphics[width=1.2cm]{Flags/pst-Moldova-flag-seal}}
 %
 }}
 %-------------------------------------------------------------------------------
@@ -3278,7 +3950,7 @@
 \psframe[fillcolor=mnRed](0,0)(2,3)%
 % seal
 \psset{fillcolor=mnYellow}%
-\rput(1,1.5){\input{Flags/Mongolia-flag-seal.tex}}
+\rput(1,1.5){\input{Flags/pst-Mongolia-flag-seal.tex}}
 %
 }}
 %-------------------------------------------------------------------------------
@@ -3301,10 +3973,7 @@
 \psframe[fillcolor=ptGreen](0,0)(30,20)%
 \psframe[fillcolor=ptRed](12,0)(30,20)%
 % seal
-\rput(12,10){\includegraphics[width=10cm]{Flags/Portugal-flag-seal.eps}}
-%\psset{fillstyle=solid,fillcolor=mnYellow,linestyle=none}%
-%\rput(1,1.5){\input{Flags/Portugal-flag-seal.tex}}
-%
+\rput(12,10){\includegraphics[width=10cm]{Flags/pst-Portugal-flag-seal.eps}}
 }}
 %-------------------------------------------------------------------------------
 %\rput(0,10){\flagPT[2]}
@@ -3375,7 +4044,7 @@
 % seal
 %\rput(4.5,3){\includegraphics[width=10cm]{Flags/Portugal-flag-seal.eps}}
 \psset{fillcolor=white}%
-\rput(4.5,3){\input{Flags/Saudi-flag-seal.tex}}
+\rput(4.5,3){\input{Flags/pst-Saudi-flag-seal.tex}}
 %
 }}
 %-------------------------------------------------------------------------------
@@ -3399,10 +4068,7 @@
 \psframe[fillcolor=rsBlue](0,2)(9,4)%
 \psframe[fillcolor=white](0,0)(9,2)%
 % seal
-\rput(3.2143,3.25){\includegraphics[width=2.25cm]{Flags/Serbia-flag-seal.eps}}
-%\psset{fillcolor=white}%
-%\rput(4.5,3){\input{Flags/Serbia-flag-seal.tex}}
-%
+\rput(3.2143,3.25){\includegraphics[width=2.25cm]{Flags/pst-Serbia-flag-seal.eps}}
 }}
 %-------------------------------------------------------------------------------
 %\rput(0,10){\flagRS[2]}
@@ -3469,7 +4135,7 @@
 \multirput(0,0)(0,36){4}{\psframe[fillcolor=uyBlue](0,18)(243,36)}%
 \psframe[fillcolor=white](0,72)(90,162)%
 %
-\rput(45,117){\includegraphics[width=66cm]{Flags/Uruguay-flag-seal.eps}}%
+\rput(45,117){\includegraphics[width=66cm]{Flags/pst-Uruguay-flag-seal.eps}}%
 %\rput(45,117){\input{Flags/Uruguay-flag-seal.tex}}%
 }}
 %-------------------------------------------------------------------------------
@@ -3497,9 +4163,7 @@
 \multido{\nA=0+30}{7}{%
 \uput{1.4}[\nA]{0}(7,3.2){\iconStar[0.45]{0.8}}%
 }%
-\rput(7,3.2){\psscalebox{1.5}{\input{Flags/Tajikistan-flag-seal-crown.tex}}}%
-%
-%\rput(45,117){\includegraphics[width=66cm]{Flags/Uruguay-flag-seal.eps}}%
+\rput(7,3.2){\psscalebox{1.5}{\input{Flags/pst-Tajikistan-flag-seal-crown.tex}}}%
 }}
 %-------------------------------------------------------------------------------
 %\rput(3,8){\flagTJ[2]}
@@ -3545,7 +4209,7 @@
 \psframe[fillcolor=lkOrange](4.3,1)(7.6,11)%
 \psframe[fillcolor=lkMaroon](8.6,1)(23,11)%
 \psset{fillcolor=lkYellow,linestyle=solid,linewidth=0.02,linecolor=black}%
-\rput(15.8,6){\psscalebox{1.5}{\input{Flags/SriLanka-seal.tex}}}
+\rput(15.8,6){\psscalebox{1.5}{\input{Flags/pst-SriLanka-seal.tex}}}
 }}
 %-------------------------------------------------------------------------------
 %\rput(3,8){\flagLK[2]}
@@ -3565,7 +4229,7 @@
 \psframe[fillcolor=esRed](0,4.5)(9,6)%
 \psframe[fillcolor=esYellow](0,1.5)(9,4.5)%
 \psframe[fillcolor=esRed](0,0)(9,1.5)%
-\rput(3,3){\includegraphics[height=2.4cm]{Flags/Spain-seal.eps}}
+\rput(3,3){\includegraphics[height=2.4cm]{Flags/pst-Spain-seal.eps}}
 }}
 %-------------------------------------------------------------------------------
 %\rput(15,8){\flagES[2]}
@@ -3586,7 +4250,7 @@
 \psframe[fillcolor=white](0,4)(12,6)%
 \psframe[fillcolor=siBlue](0,2)(12,4)%
 \psframe[fillcolor=siRed](0,0)(12,2)%
-\rput(3,4){\includegraphics[height=2cm]{Flags/Slovenia-flag-seal.eps}}
+\rput(3,4){\includegraphics[height=2cm]{Flags/pst-Slovenia-flag-seal.eps}}
 }}
 %-------------------------------------------------------------------------------
 %\rput(0,6){\flagSI[2]}
@@ -3606,7 +4270,7 @@
 \psframe[fillcolor=white](0,8)(18,12)%
 \psframe[fillcolor=skBlue](0,4)(18,8)%
 \psframe[fillcolor=skRed](0,0)(18,4)%
-\rput(3.6,8){\includegraphics[height=5.14cm]{Flags/Slovakia-flag-seal.eps}}
+\rput(3.6,8){\includegraphics[height=5.14cm]{Flags/pst-Slovakia-flag-seal.eps}}
 }}
 %-------------------------------------------------------------------------------
 %\rput(3,6){\flagSK[2]}
@@ -3660,7 +4324,7 @@
 \FPeval{\wide}{round(#1/7:3)}\psscalebox{\wide}{%
 \psset{dimen=middle,fillstyle=solid, linestyle=none}%
 \psframe[fillcolor=alRed](0,0)(7,5)%
-\rput(3.5,2.5){\psscalebox{1.5}{\input{Flags/Albania-flag-seal.tex}}}%
+\rput(3.5,2.5){\psscalebox{1.5}{\input{Flags/pst-Albania-flag-seal.tex}}}%
 }}
 %-------------------------------------------------------------------------------
 %\rput(6,6){\flagAL[2]}
@@ -3731,7 +4395,7 @@
 \psframe[fillcolor=arBlue](0,10)(24,15)%
 \psframe[fillcolor=white](0,5)(24,10)%
 \psframe[fillcolor=arBlue](0,0)(24,5)%
-\rput(12,7.5){\includegraphics[width=4.2cm]{Flags/Argentina-flag-seal.eps}}%
+\rput(12,7.5){\includegraphics[width=4.2cm]{Flags/pst-Argentina-flag-seal.eps}}%
 }}
 %-------------------------------------------------------------------------------
 %\rput(12,6){\flagAR[2]}
@@ -4158,7 +4822,7 @@
 \psframe[fillcolor=white](0,2)(9,4)%
 \psframe[fillcolor=black](0,0)(9,2)%
 \psset{fillcolor=egGold}%
-\rput(4.5,3){\psscalebox{1.5}{\input{Flags/Egypt-flag-seal.tex}}}%
+\rput(4.5,3){\psscalebox{1.5}{\input{Flags/pst-Egypt-flag-seal.tex}}}%
 }}
 %-------------------------------------------------------------------------------
 %\rput(6,0){\flagEG[2]}
@@ -4368,7 +5032,7 @@
 \psframe[fillcolor=hrRed](0,4)(12,6)%
 \psframe[fillcolor=white](0,2)(12,4)%
 \psframe[fillcolor=hrBlue](0,0)(12,2)%
-\rput(6,3){\includegraphics[width=28mm]{Flags/Croatia-flag-seal.eps}}%
+\rput(6,3){\includegraphics[width=28mm]{Flags/pst-Croatia-flag-seal.eps}}%
 }}
 %-------------------------------------------------------------------------------
 %\rput(6,21){\flagHR[2]}
@@ -4532,7 +5196,7 @@
 \psframe[fillcolor=adRed](6.8,0)(10,7)%
 \psframe[fillcolor=adYellow](3.2,0)(6.8,7)%
 \psframe[fillcolor=adBlue](0,0)(3.2,7)%
-\rput(5,3.5){\includegraphics[width=30.140mm]{Flags/Andora-flag-seal.eps}}
+\rput(5,3.5){\includegraphics[width=30.140mm]{Flags/pst-Andora-flag-seal.eps}}
 }}
 %-------------------------------------------------------------------------------
 %\rput(3,19){\flagAD[2]}
@@ -4552,7 +5216,7 @@
 \psframe[fillcolor=bbBlue](6,0)(9,6)%
 \psframe[fillcolor=bbYellow](3,0)(6,6)%
 \psframe[fillcolor=bbBlue](0,0)(3,6)%
-\rput(4.6,3){\psscalebox{1.5}{\input{Flags/Barbados-flag-seal.tex}}}%
+\rput(4.6,3){\psscalebox{1.5}{\input{Flags/pst-Barbados-flag-seal.tex}}}%
 }}
 %-------------------------------------------------------------------------------
 %\rput(6,19){\flagBB[2]}
@@ -4571,7 +5235,7 @@
 \psset{dimen=middle, fillstyle=solid, linestyle=none}%
 \psframe[fillcolor=aoRed](0,3)(9,6)%
 \psframe[fillcolor=black](0,0)(9,3)%
-\rput(4.6,3){\psscalebox{1.5}{\input{Flags/Angola-flag-seal.tex}}}%
+\rput(4.6,3){\psscalebox{1.5}{\input{Flags/pst-Angola-flag-seal.tex}}}%
 }}
 %-------------------------------------------------------------------------------
 %\rput(9,19){\flagAO[2]}
@@ -4638,7 +5302,7 @@
 \psset{dimen=middle, fillstyle=solid, linestyle=none}%
 \psframe[fillcolor=bzRed](0,0)(5,3)%
 \psframe[fillcolor=asBlue](0,0.3)(5,2.7)%
-\rput(2.5,1.5){\includegraphics[width=17.500mm]{Flags/Belize-flag-seal.eps}}%
+\rput(2.5,1.5){\includegraphics[width=17.500mm]{Flags/pst-Belize-flag-seal.eps}}%
 }}
 %-------------------------------------------------------------------------------
 %\rput(0,17){\flagBZ[2]}
@@ -4657,7 +5321,7 @@
 \psset{dimen=middle, fillstyle=solid, linestyle=none}%
 \pspolygon[fillcolor=btRed](0,0)(9,0)(9,6)%
 \pspolygon[fillcolor=btYellow](0,0)(0,6)(9,6)%
-\rput(4.5,3){\includegraphics[width=64.103mm]{Flags/Bhutan-flag-seal.eps}}%
+\rput(4.5,3){\includegraphics[width=64.103mm]{Flags/pst-Bhutan-flag-seal.eps}}%
 }}
 %-------------------------------------------------------------------------------
 %\rput(12,17){\flagBT[2]}
@@ -4678,7 +5342,7 @@
 \psframe[fillcolor=boRed](0,10)(22,15)%
 \psframe[fillcolor=boYellow](0,5)(22,10)%
 \psframe[fillcolor=boGreen](0,0)(22,5)%
-\rput(11,7.5){\includegraphics[width=22cm]{Flags/Bolivia-flag-seal.eps}}%
+\rput(11,7.5){\includegraphics[width=22cm]{Flags/pst-Bolivia-flag-seal.eps}}%
 }}
 %-------------------------------------------------------------------------------
 %\rput(15,17){\flagBO[2]}
@@ -4729,8 +5393,7 @@
 \psset{dimen=middle, fillstyle=solid, linestyle=none}%
 \psframe[fillcolor=khBlue](0,0)(9,6)%
 \psframe[fillcolor=khRed](0,1.5)(9,4.5)%
-\rput(4.5,3){\includegraphics[width=38.665mm]{Flags/Cambodia-flag-seal.eps}}
-%\rput(16.5,5){\includegraphics[width=63.581mm]{Flags/American-Samoa-flag-seal.eps}}%
+\rput(4.5,3){\includegraphics[width=38.665mm]{Flags/pst-Cambodia-flag-seal.eps}}
 }}
 %-------------------------------------------------------------------------------
 %\rput(12,15){\flagKH[2]}
@@ -4776,7 +5439,7 @@
 \FPeval{\wide}{round(#1/9:3)}\psscalebox{\wide}{%
 \psset{dimen=middle, fillstyle=solid, linestyle=none}%
 %\psframe[fillcolor=ukBlue](0,0)(24,12)%
-\rput(4.5,3){\includegraphics[width=9cm]{Flags/Cyprus-flag.eps}}%
+\rput(4.5,3){\includegraphics[width=9cm]{Flags/pst-Cyprus-flag.eps}}%
 }}
 %-------------------------------------------------------------------------------
 %\rput(12,13){\flagCY[2]}
@@ -4808,7 +5471,7 @@
 \multido{\nA=90+36,\nB=0+36}{10}{%
 \uput{2.25}[\nA]{\nB}(12,6){\iconStar[0.9]{0.8}}%
 }%
-\rput(12,6){\psscalebox{1.5}{\input{Flags/Dominica-flag.tex}}}%
+\rput(12,6){\psscalebox{1.5}{\input{Flags/pst-Dominica-flag.tex}}}%
 }}
 %-------------------------------------------------------------------------------
 %\rput(15,13){\flagDM[2]}
@@ -4830,7 +5493,7 @@
 \psframe[fillcolor=doRed](5.1,3.6)(9,6)%
 \psframe[fillcolor=doBlue](5.1,0)(9,2.4)%
 \psframe[fillcolor=doBlue](0,3.6)(3.9,6)%
-\rput(4.5,3){\includegraphics[width=12mm]{Flags/Dominican-Republic-flag-seal.eps}}%
+\rput(4.5,3){\includegraphics[width=12mm]{Flags/pst-Dominican-Republic-flag-seal.eps}}%
 }}
 %-------------------------------------------------------------------------------
 %\rput(0,11){\flagDO[2]}
@@ -4873,7 +5536,7 @@
 \psframe[fillcolor=svBlue](0,6)(16,9)%
 \psframe[fillcolor=white](0,3)(16,6)%
 \psframe[fillcolor=svBlue](0,0)(16,3)%
-\rput(8,4.5){\includegraphics[width=28.179mm]{Flags/El-Salvador-flag-seal.eps}}%
+\rput(8,4.5){\includegraphics[width=28.179mm]{Flags/pst-El-Salvador-flag-seal.eps}}%
 }}
 %-------------------------------------------------------------------------------
 %\rput(6,11){\flagSV[2]}
@@ -4896,7 +5559,7 @@
 \psframe[fillcolor=white](0,4)(9,4)%
 \psframe[fillcolor=gqRed](0,0)(9,2)%
 \pspolygon[fillcolor=gqBlue](0,0)(0,6)(2.25,3)%
-\rput(4.5,3){\includegraphics[width=14.919mm]{Flags/Equatorial-Guinea-flag-seal.eps}}%
+\rput(4.5,3){\includegraphics[width=14.919mm]{Flags/pst-Equatorial-Guinea-flag-seal.eps}}%
 }}
 %-------------------------------------------------------------------------------
 %\rput(9,11){\flagGQ[2]}
@@ -4918,7 +5581,7 @@
 \psframe[fillcolor=erRed](0,0)(4,2)%
 \pspolygon[fillcolor=erGreen](0,2)(4,2)(4,1)%
 \pspolygon[fillcolor=erBlue](0,0)(4,0)(4,1)%
-\rput(1,1){\psscalebox{1.5}{\input{Flags/Eritrea-flag-seal.tex}}}%
+\rput(1,1){\psscalebox{1.5}{\input{Flags/pst-Eritrea-flag-seal.tex}}}%
 }}
 %-------------------------------------------------------------------------------
 %\rput(12,11){\flagER[2]}
@@ -4936,7 +5599,7 @@
 \FPeval{\wide}{round(#1/24:3)}\psscalebox{\wide}{%
 \psset{dimen=middle, fillstyle=solid, linestyle=none}%
 %\psframe[fillcolor=fjCyan](0,0)(24,12)%
-\rput(12,6){\includegraphics[width=24cm]{Flags/Kazakhstan-flag.eps}}%
+\rput(12,6){\includegraphics[width=24cm]{Flags/pst-Kazakhstan-flag.eps}}%
 }}
 %-------------------------------------------------------------------------------
 %\rput(0,9){\flagKZ[2]}
@@ -4957,7 +5620,7 @@
 \psframe[fillcolor=black](0,4.2)(9,6)%
 \psframe[fillcolor=keRed](0,2.1)(9,3.9)%
 \psframe[fillcolor=keGreen](0,0)(9,1.8)%
-\rput(4.5,3){\includegraphics[width=24.256mm]{Flags/Kenya-flag-seal.eps}}%
+\rput(4.5,3){\includegraphics[width=24.256mm]{Flags/pst-Kenya-flag-seal.eps}}%
 }}
 %-------------------------------------------------------------------------------
 %\rput(3,9){\flagKE[2]}
@@ -5047,7 +5710,7 @@
 \FPeval{\wide}{round(#1/10:3)}\psscalebox{\wide}{%
 \psset{dimen=middle, fillstyle=solid, linestyle=none}%
 %\psframe[fillcolor=white](0,0)(72,48)%
-\rput(5,3){\includegraphics[width=10cm]{Flags/Kyrgyzstan-flag.eps}}
+\rput(5,3){\includegraphics[width=10cm]{Flags/pst-Kyrgyzstan-flag.eps}}
 }}
 %-------------------------------------------------------------------------------
 %\rput(9,9){\flagKG[2]}
@@ -5067,7 +5730,7 @@
 %\psframe[fillcolor=white](0,0)(9,6)%
 %\psframe[fillcolor=lbRed](0,4.5)(9,6)%
 %\psframe[fillcolor=lbRed](0,0)(9,1.5)%
-\rput(4.5,3){\includegraphics[width=9cm]{Flags/Lebanon-flag.eps}}
+\rput(4.5,3){\includegraphics[width=9cm]{Flags/pst-Lebanon-flag.eps}}
 }}
 %-------------------------------------------------------------------------------
 %\rput(12,9){\flagLB[2]}
@@ -5087,7 +5750,7 @@
 \psframe[fillcolor=white](0,0)(9,6)%
 \psframe[fillcolor=lsBlue](0,4.2)(9,6)%
 \psframe[fillcolor=lsGreen](0,0)(9,1.8)%
-\rput(4.5,3){\psscalebox{1.5}{\input{Flags/Lesotho-flag-seal.tex}}}%
+\rput(4.5,3){\psscalebox{1.5}{\input{Flags/pst-Lesotho-flag-seal.tex}}}%
 }}
 %-------------------------------------------------------------------------------
 %\rput(15,9){\flagLS[2]}
@@ -5127,7 +5790,7 @@
 \FPeval{\wide}{round(#1/20:3)}\psscalebox{\wide}{%
 \psset{dimen=middle, fillstyle=solid, linestyle=none}%
 %\psframe[fillcolor=white](0,0)(20.9,11)%
-\rput(10,6){\includegraphics[width=20cm]{Flags/Liechtenstein-flag.eps}}%
+\rput(10,6){\includegraphics[width=20cm]{Flags/pst-Liechtenstein-flag.eps}}%
 }}
 %-------------------------------------------------------------------------------
 %\rput(3,7){\flagLI[2]}
@@ -5208,7 +5871,7 @@
 \FPeval{\wide}{round(#1/24:3)}\psscalebox{\wide}{%
 \psset{dimen=middle, fillstyle=solid, linestyle=none}%
 %\psframe[fillcolor=meYellow](0,0)(9,6)%
-\rput(12,6){\includegraphics[width=24cm]{Flags/Montenegro-flag.eps}}%
+\rput(12,6){\includegraphics[width=24cm]{Flags/pst-Montenegro-flag.eps}}%
 }}
 %-------------------------------------------------------------------------------
 %\rput(12,7){\flagME[2]}
@@ -5276,7 +5939,7 @@
 \psset{dimen=middle, fillstyle=solid, linestyle=none}%
 %\pspolygon[fillcolor=black](0,0)(0,3)(4,0)%
 %\pspolygon[fillcolor=pgRed](0,3)(4,3)(4,0)%
-\rput(2,1.5){\includegraphics[width=40mm]{Flags/Papua-New-Guinea-flag.eps}}%
+\rput(2,1.5){\includegraphics[width=40mm]{Flags/pst-Papua-New-Guinea-flag.eps}}%
 }}
 %-------------------------------------------------------------------------------
 %\rput(3,5){\flagPG[2]}
@@ -5324,7 +5987,7 @@
 \psframe[fillcolor=zmRed](216,0)(256,144)%
 \psframe[fillcolor=black](256,0)(296,144)%
 \psframe[fillcolor=zmYellow](296,0)(336,144)%
-\rput(276,184){\includegraphics[width=106cm]{Flags/Zambia-flag-seal.eps}}%
+\rput(276,184){\includegraphics[width=106cm]{Flags/pst-Zambia-flag-seal.eps}}%
 }}
 %-------------------------------------------------------------------------------
 %\rput(9,5){\flagZM[2]}
@@ -5351,7 +6014,7 @@
 \psset{fillcolor=zwRed}%
 \rput(6.8,13){\iconStar[10]{0.8}}%
 %\rput(6.8,13){\psscalebox{15}{\input{Flags/Zimbabwe-flag-seal.tex}}}%
-\rput(7.4,13){\includegraphics[width=4.942cm]{Flags/Zimbabwe-flag-seal.eps}}%
+\rput(7.4,13){\includegraphics[width=4.942cm]{Flags/pst-Zimbabwe-flag-seal.eps}}%
 }}
 %-------------------------------------------------------------------------------
 %\rput(12,5){\flagZW[2]}
@@ -5375,7 +6038,7 @@
 \psframe[fillcolor=ugYellow](0,1)(9,2)%
 \psframe[fillcolor=ugRed](0,0)(9,1)%
 \pscircle[fillcolor=white](4.5,3){0.9350}%
-\rput(4.7,3){\psscalebox{1.5}{\input{Flags/Uganda-flagseal.tex}}}%
+\rput(4.7,3){\psscalebox{1.5}{\input{Flags/pst-Uganda-flagseal.tex}}}%
 }}
 %-------------------------------------------------------------------------------
 %\rput(15,5){\flagUG[2]}
