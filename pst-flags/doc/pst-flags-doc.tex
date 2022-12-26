@@ -17,16 +17,16 @@
 %---------------+---------+----------------------------------------------------
 % 14-Dec-2022   | AMM     | Initial Version
 %---------------+---------+----------------------------------------------------
+% 25-Dec-2022   | AMM     | CTAN Review Updates
+%---------------+---------+----------------------------------------------------
 %---------------+---------+----------------------------------------------------
 %---------------+---------+----------------------------------------------------
 %===============================================================================
 \documentclass{amm-pst-doc}
-\usepackage{pstricks}
 \usepackage{pst-flags}
-
 \title{\vspace*{-10mm}
-\texttt{pst-flags}: A PSTricks Package for Drawing Flags\\[2mm]
-\Large{Version 2022/11/27}}
+\texttt{pst-flags}: A PSTricks Package for Drawing Flags of Countries\\[2mm]
+\Large{Version 2022/12/25}}
 \author{Amit M. Manthanwar}
 \date{}
 
@@ -82,212 +82,212 @@ Flags come in many different height-to-width aspect ratios (AR). The flags of In
 
 \vspace{5mm}
 \begin{table}[!ht]
-%\ttfamily
-\centering%
-\setlength{\tabcolsep}{1.5mm}%
-\scriptsize%
-\noindent\resizebox{\textwidth}{!}{%
-\begin{tabular}{@{}ccc@{}}
-\begin{tabular}{@{}lcr}
-\textbf{Country} & \textbf{Code} & \textbf{AR}\\
-Albania	&	AL	&	5:7	\\
-Algeria	&	DZ	&	2:3	\\
-American Samoa (US) 	&	AS	&	1:19	\\
-Andorra	&	AD	&	7:1	\\
-Angola	&	AO	&	2:3	\\
-Anguilla (UK) 	&	AI	&	1:2	\\
-Antigua and Barbuda	&	AG	&	2:3	\\
-Argentina	&	AR	&	5:8	\\
-Armenia	&	AM	&	1:2	\\
-Aruba (Netherlands) 	&	AW	&	2:3	\\
-Australia	&	AU	&	1:2	\\
-Austria	&	AT	&	2:3	\\
-Azerbaijan	&	AZ	&	1:2	\\
-Bahamas	&	BS	&	1:2	\\
-Bahrain	&	BH	&	3:5	\\
-Bangladesh	&	BD	&	3:5	\\
-Barbados	&	BB	&	2:3	\\
-Belarus	&	BY	&	1:2	\\
-Belgium	&	BE	&	13:15	\\
-Belize	&	BZ	&	3:5	\\
-Benin	&	BJ	&	2:3	\\
-Bermuda (UK) 	&	BM	&	1:2	\\
-Bhutan	&	BT	&	2:3	\\
-Bolivia	&	BO	&	15:22	\\
-Bosnia and Herzegovina	&	BA	&	1:2	\\
-Botswana	&	BW	&	2:3	\\
-Brazil	&	BR	&	7:1	\\
-British Indian Ocean Territory	&	IO	&	1:2	\\
-British Virgin Islands	&	VG	&	1:2	\\
-Brunei Darussalam	&	BN	&	1:2	\\
-Bulgaria	&	BG	&	3:5	\\
-Burkina Faso	&	BF	&	2:3	\\
-Burundi	&	BI	&	3:5	\\
-Cambodia	&	KH	&	16:25	\\
-Cameroon	&	CM	&	2:3	\\
-Canada	&	CA	&	1:2	\\
-Cayman Islands (UK) 	&	KY	&	1:2	\\
-Central African Republic	&	CF	&	2:3	\\
-Chad	&	TD	&	2:3	\\
-Chile	&	CL	&	2:3	\\
-China	&	CN	&	2:3	\\
-Christmas Island (AU) 	&	CX	&	1:2	\\
-Cocos (Keeling) Islands (AU) 	&	CC	&	1:2	\\
-Colombia	&	CO	&	2:3	\\
-Comoros	&	KM	&	3:5	\\
-Congo, (Brazzaville) Republic &	CG	&	3:4	\\
-Congo, (Kinshasa) Democratic  &	CD	&	2:3	\\
-Cook Islands (New Zealand) 	&	CK	&	1:2	\\
-Costa Rica	&	CR	&	3:5	\\
-Croatia	&	HR	&	1:2	\\
-Cuba	&	CU	&	1:2	\\
-Cyprus	&	CY	&	2:3	\\
-Czech Republic	&	CZ	&	2:3	\\
-Denmark	&	DK	&	28:37	\\
-Djibouti	&	DJ	&	2:3	\\
-Dominica	&	DM	&	1:2	\\
-Dominican Republic	&	DO	&	5:8	\\
-Ecuador	&	EC	&	2:3	\\
-Egypt	&	EG	&	2:3	\\
-El Salvador	&	SV	&	189:335	\\
-Equatorial Guinea	&	GQ	&	2:3	\\
-Eritrea	&	ER	&	1:2	
-\end{tabular}
-&%
-\begin{tabular}{lcr}
-\textbf{Country} & \textbf{Code} & \textbf{AR}\\
-Estonia	&	EE	&	7:11	\\
-Ethiopia	&	ET	&	1:2	\\
-Fiji	&	FJ	&	1:2	\\
-Finland	&	FI	&	11:18	\\
-France	&	FR	&	2:3	\\
-Gabon	&	GA	&	3:4	\\
-Gambia	&	GM	&	2:3	\\
-Georgia	&	GE	&	2:3	\\
-Germany	&	DE	&	3:5	\\
-Ghana	&	GH	&	2:3	\\
-Greece	&	GR	&	2:3	\\
-Guinea	&	GN	&	2:3	\\
-Guyana	&	GY	&	3:5	\\
-Hong Kong (CN) 	&	HK	&	2:3	\\
-Hungary	&	HU	&	1:2	\\
-Iceland	&	IS	&	18:25	\\
-India	&	IN	&	2:3	\\
-Indonesia	&	ID	&	2:3	\\
-Iran	&	IR	&	4:7	\\
-Iraq	&	IQ	&	2:3	\\
-Ireland	&	IE	&	1:2	\\
-Israel	&	IL	&	8:11	\\
-Italy	&	IT	&	2:3	\\
-Jamaica	&	JM	&	1:2	\\
-Japan	&	JP	&	2:3	\\
-Jordan	&	JO	&	1:2	\\
-Kazakhstan	&	KZ	&	1:2	\\
-Kenya	&	KE	&	2:3	\\
-Korea, North	&	KP	&	1:2	\\
-Korea, South	&	KR	&	2:3	\\
-Kuwait	&	KW	&	1:2	\\
-Kyrgyzstan	&	KG	&	3:5	\\
-Latvia	&	LV	&	1:2	\\
-Lebanon	&	LB	&	2:3	\\
-Lesotho	&	LS	&	2:3	\\
-Liberia	&	LR	&	1:19	\\
-Libya	&	LY	&	1:2	\\
-Liechtenstein	&	LI	&	3:5	\\
-Lithuania	&	LT	&	3:5	\\
-Luxembourg	&	LU	&	3:5	\\
-Macedonia, North	&	MK	&	1:2	\\
-Madagascar	&	MG	&	2:3	\\
-Malawi	&	MW	&	2:3	\\
-Malaysia	&	MY	&	1:2	\\
-Maldives	&	MV	&	2:3	\\
-Mali	&	ML	&	2:3	\\
-Malta	&	MT	&	2:3	\\
-Mauritania	&	MR	&	2:3	\\
-Mauritius	&	MU	&	2:3	\\
-Mexico	&	MX	&	4:7	\\
-Moldova	&	MD	&	1:2	\\
-Monaco	&	MC	&	4:5	\\
-Mongolia	&	MN	&	1:2	\\
-Montenegro	&	ME	&	1:2	\\
-Morocco	&	MA	&	2:3	\\
-Mozambique	&	MZ	&	2:3	\\
-Myanmar	&	MM	&	2:3	\\
-Namibia	&	NA	&	2:3	\\
-Nauru	&	NR	&	1:2	\\
-Nepal	&	NP	&	5:41\\	
-Netherlands	&	NL	&	2:3	\\
-New Zealand	&	NZ	&	1:2	
-\end{tabular}
-&%
-\begin{tabular}{lcr@{}}
-\textbf{Country} & \textbf{Code} & \textbf{AR}\\
-Nicaragua	&	NI	&	3:5	\\
-Niger	&	NE	&	6:7	\\
-Nigeria	&	NG	&	1:2	\\
-Norway	&	NO	&	8:11	\\
-Oman	&	OM	&	1:2	\\
-Pakistan	&	PK	&	2:3	\\
-Palau	&	PW	&	5:8	\\
-Palestinian Territory	&	PS	&	1:2	\\
-Panama	&	PA	&	2:3	\\
-Papua New Guinea	&	PG	&	3:4	\\
-Paraguay	&	PY	&	11:2	\\
-Peru	&	PE	&	2:3	\\
-Philippines	&	PH	&	1:2	\\
-Poland	&	PL	&	5:8	\\
-Portugal	&	PT	&	2:3	\\
-Puerto Rico (US) 	&	PR	&	2:3	\\
-Qatar	&	QA	&	11:28	\\
-Romania	&	RO	&	2:3	\\
-Russian Federation	&	RU	&	2:3	\\
-Rwanda	&	RW	&	2:3	\\
-Saint Kitts and Nevis	&	KN	&	2:3	\\
-Saudi Arabia	&	SA	&	2:3	\\
-Senegal	&	SN	&	2:3	\\
-Serbia	&	RS	&	2:3	\\
-Seychelles	&	SC	&	1:2	\\
-Sierra Leone	&	SL	&	2:3	\\
-Singapore	&	SG	&	2:3	\\
-Slovakia	&	SK	&	2:3	\\
-Slovenia	&	SI	&	1:2	\\
-Solomon Islands	&	SB	&	1:2	\\
-Somalia	&	SO	&	2:3	\\
-South Africa	&	ZA	&	2:3	\\
-South Sudan	&	SS	&	1:2	\\
-Spain	&	ES	&	2:3	\\
-Sri Lanka	&	LK	&	1:2	\\
-Sudan	&	SD	&	1:2	\\
-Suriname	&	SR	&	2:3	\\
-Sweden	&	SE	&	5:8	\\
-Switzerland	&	CH	&	1:1	\\
-Syria	&	SY	&	2:3	\\
-Taiwan	&	TW	&	2:3	\\
-Tajikistan	&	TJ	&	1:2	\\
-Tanzania	&	TZ	&	2:3	\\
-Thailand	&	TH	&	2:3	\\
-Timor-Leste	&	TL	&	1:2	\\
-Togo	&	TG	&	1:$\phi$	\\
-Tonga	&	TO	&	1:2	\\
-Trinidad and Tobago	&	TT	&	3:5	\\
-Tunisia	&	TN	&	2:3	\\
-Turkey	&	TR	&	2:3	\\
-Uganda	&	UG	&	2:3	\\
-Ukraine	&	UA	&	2:3	\\
-United Arab Emirates	&	AE	&	1:2	\\
-United Kingdom	&	GB	&	1:2	\\
-United States of America	&	US	&	1:19	\\
-Uruguay	&	UY	&	2:3	\\
-Uzbekistan	&	UZ	&	1:2	\\
-Venezuela	&	VE	&	2:3	\\
-Viet Nam	&	VN	&	2:3	\\
-Yemen	&	YE	&	2:3	\\
-Zambia	&	ZM	&	2:3	\\
-Zimbabwe	&	ZW	&	1:2	
-\end{tabular}
-%
-\end{tabular}
-}%
+    %\ttfamily
+    \centering%
+    \setlength{\tabcolsep}{1.5mm}%
+    \scriptsize%
+    \noindent\resizebox{\textwidth}{!}{%
+        \begin{tabular}{@{}ccc@{}}
+            \begin{tabular}{@{}lcr}
+                \textbf{Country}               & \textbf{Code} & \textbf{AR} \\
+                Albania                        & AL            & 5:7         \\
+                Algeria                        & DZ            & 2:3         \\
+                American Samoa (US)            & AS            & 1:19        \\
+                Andorra                        & AD            & 7:1         \\
+                Angola                         & AO            & 2:3         \\
+                Anguilla (UK)                  & AI            & 1:2         \\
+                Antigua and Barbuda            & AG            & 2:3         \\
+                Argentina                      & AR            & 5:8         \\
+                Armenia                        & AM            & 1:2         \\
+                Aruba (Netherlands)            & AW            & 2:3         \\
+                Australia                      & AU            & 1:2         \\
+                Austria                        & AT            & 2:3         \\
+                Azerbaijan                     & AZ            & 1:2         \\
+                Bahamas                        & BS            & 1:2         \\
+                Bahrain                        & BH            & 3:5         \\
+                Bangladesh                     & BD            & 3:5         \\
+                Barbados                       & BB            & 2:3         \\
+                Belarus                        & BY            & 1:2         \\
+                Belgium                        & BE            & 13:15       \\
+                Belize                         & BZ            & 3:5         \\
+                Benin                          & BJ            & 2:3         \\
+                Bermuda (UK)                   & BM            & 1:2         \\
+                Bhutan                         & BT            & 2:3         \\
+                Bolivia                        & BO            & 15:22       \\
+                Bosnia and Herzegovina         & BA            & 1:2         \\
+                Botswana                       & BW            & 2:3         \\
+                Brazil                         & BR            & 7:1         \\
+                British Indian Ocean Territory & IO            & 1:2         \\
+                British Virgin Islands         & VG            & 1:2         \\
+                Brunei Darussalam              & BN            & 1:2         \\
+                Bulgaria                       & BG            & 3:5         \\
+                Burkina Faso                   & BF            & 2:3         \\
+                Burundi                        & BI            & 3:5         \\
+                Cambodia                       & KH            & 16:25       \\
+                Cameroon                       & CM            & 2:3         \\
+                Canada                         & CA            & 1:2         \\
+                Cayman Islands (UK)            & KY            & 1:2         \\
+                Central African Republic       & CF            & 2:3         \\
+                Chad                           & TD            & 2:3         \\
+                Chile                          & CL            & 2:3         \\
+                China                          & CN            & 2:3         \\
+                Christmas Island (AU)          & CX            & 1:2         \\
+                Cocos (Keeling) Islands (AU)   & CC            & 1:2         \\
+                Colombia                       & CO            & 2:3         \\
+                Comoros                        & KM            & 3:5         \\
+                Congo, (Brazzaville) Republic  & CG            & 3:4         \\
+                Congo, (Kinshasa) Democratic   & CD            & 2:3         \\
+                Cook Islands (New Zealand)     & CK            & 1:2         \\
+                Costa Rica                     & CR            & 3:5         \\
+                Croatia                        & HR            & 1:2         \\
+                Cuba                           & CU            & 1:2         \\
+                Cyprus                         & CY            & 2:3         \\
+                Czech Republic                 & CZ            & 2:3         \\
+                Denmark                        & DK            & 28:37       \\
+                Djibouti                       & DJ            & 2:3         \\
+                Dominica                       & DM            & 1:2         \\
+                Dominican Republic             & DO            & 5:8         \\
+                Ecuador                        & EC            & 2:3         \\
+                Egypt                          & EG            & 2:3         \\
+                El Salvador                    & SV            & 189:335     \\
+                Equatorial Guinea              & GQ            & 2:3         \\
+                Eritrea                        & ER            & 1:2
+            \end{tabular}
+             & %
+            \begin{tabular}{lcr}
+                \textbf{Country} & \textbf{Code} & \textbf{AR} \\
+                Estonia          & EE            & 7:11        \\
+                Ethiopia         & ET            & 1:2         \\
+                Fiji             & FJ            & 1:2         \\
+                Finland          & FI            & 11:18       \\
+                France           & FR            & 2:3         \\
+                Gabon            & GA            & 3:4         \\
+                Gambia           & GM            & 2:3         \\
+                Georgia          & GE            & 2:3         \\
+                Germany          & DE            & 3:5         \\
+                Ghana            & GH            & 2:3         \\
+                Greece           & GR            & 2:3         \\
+                Guinea           & GN            & 2:3         \\
+                Guyana           & GY            & 3:5         \\
+                Hong Kong (CN)   & HK            & 2:3         \\
+                Hungary          & HU            & 1:2         \\
+                Iceland          & IS            & 18:25       \\
+                India            & IN            & 2:3         \\
+                Indonesia        & ID            & 2:3         \\
+                Iran             & IR            & 4:7         \\
+                Iraq             & IQ            & 2:3         \\
+                Ireland          & IE            & 1:2         \\
+                Israel           & IL            & 8:11        \\
+                Italy            & IT            & 2:3         \\
+                Jamaica          & JM            & 1:2         \\
+                Japan            & JP            & 2:3         \\
+                Jordan           & JO            & 1:2         \\
+                Kazakhstan       & KZ            & 1:2         \\
+                Kenya            & KE            & 2:3         \\
+                Korea, North     & KP            & 1:2         \\
+                Korea, South     & KR            & 2:3         \\
+                Kuwait           & KW            & 1:2         \\
+                Kyrgyzstan       & KG            & 3:5         \\
+                Latvia           & LV            & 1:2         \\
+                Lebanon          & LB            & 2:3         \\
+                Lesotho          & LS            & 2:3         \\
+                Liberia          & LR            & 1:19        \\
+                Libya            & LY            & 1:2         \\
+                Liechtenstein    & LI            & 3:5         \\
+                Lithuania        & LT            & 3:5         \\
+                Luxembourg       & LU            & 3:5         \\
+                Macedonia, North & MK            & 1:2         \\
+                Madagascar       & MG            & 2:3         \\
+                Malawi           & MW            & 2:3         \\
+                Malaysia         & MY            & 1:2         \\
+                Maldives         & MV            & 2:3         \\
+                Mali             & ML            & 2:3         \\
+                Malta            & MT            & 2:3         \\
+                Mauritania       & MR            & 2:3         \\
+                Mauritius        & MU            & 2:3         \\
+                Mexico           & MX            & 4:7         \\
+                Moldova          & MD            & 1:2         \\
+                Monaco           & MC            & 4:5         \\
+                Mongolia         & MN            & 1:2         \\
+                Montenegro       & ME            & 1:2         \\
+                Morocco          & MA            & 2:3         \\
+                Mozambique       & MZ            & 2:3         \\
+                Myanmar          & MM            & 2:3         \\
+                Namibia          & NA            & 2:3         \\
+                Nauru            & NR            & 1:2         \\
+                Nepal            & NP            & 5:41        \\
+                Netherlands      & NL            & 2:3         \\
+                New Zealand      & NZ            & 1:2
+            \end{tabular}
+             & %
+            \begin{tabular}{lcr@{}}
+                \textbf{Country}         & \textbf{Code} & \textbf{AR} \\
+                Nicaragua                & NI            & 3:5         \\
+                Niger                    & NE            & 6:7         \\
+                Nigeria                  & NG            & 1:2         \\
+                Norway                   & NO            & 8:11        \\
+                Oman                     & OM            & 1:2         \\
+                Pakistan                 & PK            & 2:3         \\
+                Palau                    & PW            & 5:8         \\
+                Palestinian Territory    & PS            & 1:2         \\
+                Panama                   & PA            & 2:3         \\
+                Papua New Guinea         & PG            & 3:4         \\
+                Paraguay                 & PY            & 11:2        \\
+                Peru                     & PE            & 2:3         \\
+                Philippines              & PH            & 1:2         \\
+                Poland                   & PL            & 5:8         \\
+                Portugal                 & PT            & 2:3         \\
+                Puerto Rico (US)         & PR            & 2:3         \\
+                Qatar                    & QA            & 11:28       \\
+                Romania                  & RO            & 2:3         \\
+                Russian Federation       & RU            & 2:3         \\
+                Rwanda                   & RW            & 2:3         \\
+                Saint Kitts and Nevis    & KN            & 2:3         \\
+                Saudi Arabia             & SA            & 2:3         \\
+                Senegal                  & SN            & 2:3         \\
+                Serbia                   & RS            & 2:3         \\
+                Seychelles               & SC            & 1:2         \\
+                Sierra Leone             & SL            & 2:3         \\
+                Singapore                & SG            & 2:3         \\
+                Slovakia                 & SK            & 2:3         \\
+                Slovenia                 & SI            & 1:2         \\
+                Solomon Islands          & SB            & 1:2         \\
+                Somalia                  & SO            & 2:3         \\
+                South Africa             & ZA            & 2:3         \\
+                South Sudan              & SS            & 1:2         \\
+                Spain                    & ES            & 2:3         \\
+                Sri Lanka                & LK            & 1:2         \\
+                Sudan                    & SD            & 1:2         \\
+                Suriname                 & SR            & 2:3         \\
+                Sweden                   & SE            & 5:8         \\
+                Switzerland              & CH            & 1:1         \\
+                Syria                    & SY            & 2:3         \\
+                Taiwan                   & TW            & 2:3         \\
+                Tajikistan               & TJ            & 1:2         \\
+                Tanzania                 & TZ            & 2:3         \\
+                Thailand                 & TH            & 2:3         \\
+                Timor-Leste              & TL            & 1:2         \\
+                Togo                     & TG            & 1:$\phi$    \\
+                Tonga                    & TO            & 1:2         \\
+                Trinidad and Tobago      & TT            & 3:5         \\
+                Tunisia                  & TN            & 2:3         \\
+                Turkey                   & TR            & 2:3         \\
+                Uganda                   & UG            & 2:3         \\
+                Ukraine                  & UA            & 2:3         \\
+                United Arab Emirates     & AE            & 1:2         \\
+                United Kingdom           & GB            & 1:2         \\
+                United States of America & US            & 1:19        \\
+                Uruguay                  & UY            & 2:3         \\
+                Uzbekistan               & UZ            & 1:2         \\
+                Venezuela                & VE            & 2:3         \\
+                Viet Nam                 & VN            & 2:3         \\
+                Yemen                    & YE            & 2:3         \\
+                Zambia                   & ZM            & 2:3         \\
+                Zimbabwe                 & ZW            & 1:2
+            \end{tabular}
+            %
+        \end{tabular}
+    }%
 \end{table}
 
 \clearpage

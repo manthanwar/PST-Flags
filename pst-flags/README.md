@@ -1,9 +1,8 @@
 # PST-Flags
 LaTeX package for drawing flags of countries using PSTricks
 
-
 ## Introduction
-This document is a reference manual for the \texttt{pst-flags} package. The package and its user manual are available at [ctan archive](https://ctan.org/tex-archive/graphics/pstricks/contrib/pst-flags).
+This package and its user manual are available at [ctan archive](https://ctan.org/tex-archive/graphics/pstricks/contrib/pst-flags).
 
 ### About pst-flags
 This package provides a number of macros for rendering flags of countries and their associated artefacts drawn using LaTeX PSTricks package. This package further contributes towards a complete implementation of the vector drawing capabilities provided by PSTricks. Formatting of the resulting drawings is entirely controlled by the TeX macros. A good working knowledge of LaTeX should be sufficient to design flags of sovereign countries and adapt them to create new designs. Features such as color or shape customisation and dynamic modifications are possible by cleverly adjusting the options supplied to the TeX macros.
@@ -18,9 +17,7 @@ Please use the \texttt{pst-flags} [project page on GitHub](ttps://github.com/man
 ### Acknowledgements
 This package would not have been possible without the base \texttt{PSTricks} and its associated packages. The authors would like to acknowledge the valuable contributions made by the main \texttt{PSTricks} authors and by the broader \texttt{PST} community. The colors and construction sheets used to program macros are taken from the websites:   [flagcolorcodes](https://www.flagcolorcodes.com), [wikipedia](https://en.wikipedia.org/wiki/Wiki), and [vexilla-mundi](https://www.vexilla-mundi.com).
 
-
 ## Installation and usage of **pst-flags**
-
 ### Installation
 As prerequisites for *pst-flags*, you need working
 versions of LaTeX and *pstricks*. The style file `pst-flags.sty` and all corresponding **.tex** and **.eps** assets must be somewhere
