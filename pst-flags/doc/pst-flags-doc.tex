@@ -5,7 +5,7 @@
 % Mailer: manthanwar@hotmail.com
 % WebURL: https://manthanwar.github.io
 % GitHub: https://github.com/manthanwar/PST-Flags
-% Rights: Copyright (c)2022 Amit Manohar Manthanwar
+% Rights: Copyright (c)2022-2023 Amit Manohar Manthanwar
 %-------------------------------------------------------------------------------
 % This program can be redistributed and/or modified under the terms
 % of the LaTeX Project Public License Distributed from CTAN archives
@@ -19,6 +19,8 @@
 %---------------+---------+----------------------------------------------------
 % 25-Dec-2022   | AMM     | CTAN Review Updates
 %---------------+---------+----------------------------------------------------
+% 09-Jan-2023   | AMM     | Removed xcolor
+%---------------+---------+----------------------------------------------------
 %---------------+---------+----------------------------------------------------
 %---------------+---------+----------------------------------------------------
 %===============================================================================
@@ -26,7 +28,7 @@
 \usepackage{pst-flags}
 \title{\vspace*{-10mm}
 \texttt{pst-flags}: A PSTricks Package for Drawing Flags of Countries\\[2mm]
-\Large{Version 2022/12/25}}
+\Large{Version 2022/01/09}}
 \author{Amit M. Manthanwar}
 \date{}
 
@@ -66,7 +68,6 @@ in that order via the \texttt{usepackage} macro. Now you are ready to use the \t
 
 \begin{verbatim}
 \documentclass{article}
-\usepackage{pstricks}
 \usepackage{pst-flags}
 \begin{document}
 Flag of US: \rput(0,0){\flagUS[2]}

@@ -5,7 +5,7 @@
 % Mailer: manthanwar@hotmail.com
 % WebURL: https://manthanwar.github.io
 % GitHub: https://github.com/manthanwar/PST-Flags
-% Rights: Copyright (c)2022 Amit Manohar Manthanwar
+% Rights: Copyright (c)2022-23 Amit Manohar Manthanwar
 %-------------------------------------------------------------------------------
 % This program can be redistributed and/or modified under the terms
 % of the LaTeX Project Public License Distributed from CTAN archives
@@ -19,11 +19,13 @@
 %---------------+---------+----------------------------------------------------
 % 25-Dec-2022   | AMM     | CTAN Review Updates
 %---------------+---------+----------------------------------------------------
+% 09-Jan-2023   | AMM     | Removed xcolor from pst-flags.sty
+%---------------+---------+----------------------------------------------------
 %---------------+---------+----------------------------------------------------
 %---------------+---------+----------------------------------------------------
 %===============================================================================
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{amm-pst-doc}[2022/12/25 Amit M. Manthanwar LaTeX Document Class]
+\ProvidesClass{amm-pst-doc}[2022/01/09 Amit M. Manthanwar LaTeX Document Class]
 %-------------------------------------------------------------------------------
 \LoadClass[oneside,10pt,a4paper]{article}
 %-------------------------------------------------------------------------------
